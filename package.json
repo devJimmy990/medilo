@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "watch": "cls &&tailwindcss -i ./src/style/global.css -o ./src/style/output.css --watch"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.16"
   }
