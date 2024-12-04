@@ -124,7 +124,7 @@
   /* 2 */
   border-style: solid;
   /* 2 */
-  border-color: #e5e7eb;
+  border-color: currentColor;
   /* 2 */
 }
 
@@ -554,14 +554,16 @@ video {
   display: none;
 }
 
-.bg-amber-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 230 138 / var(--tw-bg-opacity, 1));
+.flex {
+  display: flex;
 }
 
-.bg-green-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(187 247 208 / var(--tw-bg-opacity, 1));
+.font-body {
+  font-family: Rubik;
+}
+
+.font-heading {
+  font-family: Poppins;
 }
 
 .text-5xl {
@@ -569,17 +571,82 @@ video {
   line-height: 1;
 }
 
-.text-8xl {
-  font-size: 6rem;
-  line-height: 1;
+@font-face {
+  font-family: "Poppins";
+
+  src: url("../assets/fonts/Poppins-Bold.ttf") format("truetype");
+
+  font-weight: 700;
+
+  font-style: normal;
 }
 
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
+@font-face {
+  font-family: "Poppins";
+
+  src: url("../assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+
+  font-weight: 600;
+
+  font-style: normal;
 }
 
-.text-red-800 {
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity, 1));
+@font-face {
+  font-family: "Poppins";
+
+  src: url("../assets/fonts/Poppins-Medium.ttf") format("truetype");
+
+  font-weight: 500;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+
+  src: url("../assets/fonts/Poppins-Regular.ttf") format("truetype");
+
+  font-weight: 400;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+
+  src: url("../assets/fonts/Rubik-Bold.ttf") format("truetype");
+
+  font-weight: 700;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+
+  src: url("../assets/fonts/Rubik-SemiBold.ttf") format("truetype");
+
+  font-weight: 600;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+
+  src: url("../assets/fonts/Rubik-Medium.ttf") format("truetype");
+
+  font-weight: 500;
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+
+  src: url("../assets/fonts/Rubik-Regular.ttf") format("truetype");
+
+  font-weight: 400;
+
+  font-style: normal;
 }

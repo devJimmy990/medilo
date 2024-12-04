@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'heading': ['Poppins', ...defaultTheme.fontFamily.sans],
-        'body': ['Rubik', ...defaultTheme.fontFamily.sans],
+        'heading': ['Poppins'],
+        'body': ['Rubik'],
       },
       colors: {
         white: '#fff',
