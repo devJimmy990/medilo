@@ -4,11 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="../../style/output.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Hospitium</title>
 </head>
 
 <body>
+    <header class="h-[30rem] relative align-middle">
+        <img src="../../assets/images/banner.jpg" alt="Banner" class="w-full h-full absolute z-0">
+        <nav
+            class="flex justify-between absolute top-0 start-0 end-0 z-1 px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-4">
+            <img src="../../assets/svgs/logo.svg" alt="Hospitium">
+
+            <div class="hidden md:flex items-center gap-5 lg:gap-8">
+                <ul class="flex gap-4 lg:gap-8">
+                    <a href="#">
+                        <li class="font-semibold hover:text-accent">Home</li>
+                    </a>
+                    <a href="#">
+                        <li class="font-semibold hover:text-accent">About</li>
+                    </a>
+                    <a href="#">
+                        <li class="font-semibold hover:text-accent">Services</li>
+                    </a>
+                    <a href="#">
+                        <li class="font-semibold hover:text-accent">Blog</li>
+                    </a>
+                    <a href="#">
+                        <li class="font-semibold hover:text-accent">Contact</li>
+                    </a>
+                </ul>
+                <div class="flex items-center justify-center border border-1 rounded-[50%] w-7 h-7">
+                    <i class="fas fa-magnifying-glass fa-sm"></i>
+                </div>
+                <div class="hidden lg:flex">
+                    <button
+                        class="hidden lg:flex items-center justify-center gap-2 font-bold text-white rounded-3xl px-5 py-2 bg-accent"
+                        aria-label="Contact Now">
+                        Contact Now
+                        <div> <i class="fas fa-angles-right fa-xs" aria-hidden="true"></i> </div>
+                    </button>
+                </div>
+                <div class="lg:hidden">
+                    <button
+                        class="lg:hidden items-center justify-center text-white rounded-3xl px-5 py-2 bg-accent"
+                        aria-label="Contact Now">
+                        <div> <i class="fas fa-headset lg:hidden" aria-hidden="true"></i> </div>
+                    </button>
+                </div>
+
+            </div>
+        </nav>
+        <div class="flex flex-col gap-3 absolute top-[40%] start-[15%] z-2 ">
+            <h3 class="text-5xl font-bold">About Page</h3> <!-- Edit Current Page Name-->
+            <p>
+                <a href="/index.html">home</a> /
+                <span class="text-accent">about</span><!-- Edit Current Page Path-->
+            </p>
+        </div>
+    </header>
 
 </body>
 
