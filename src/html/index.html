@@ -4,11 +4,339 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="../style/output.css" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
+    <header class="h-[40rem] flex flex-col">
+        <nav class="w-full flex justify-between items-center px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-4">
+            <div class="w-full lg:w-[10rem] flex items-center justify-between ">
+                <a href="/" class="max-w-[8rem] lg:w-[120rem]">
+                    <img class="w-full" src="../assets/svgs/logo.svg" alt="Hospitium Logo">
+                </a>
+                <div id="menu" class="md:hidden flex items-center justify-center">
+                    <i class="fas fa-bars fa-lg"></i>
+                </div>
+                <div id="modal"
+                    class="w-[75%] md:w-[50%] h-screen lg:hidden hidden flex-col justify-between absolute top-0 end-0 z-40 p-4 text-white  bg-[#223361]">
+                    <div class="w-full flex flex-col">
+                        <div id="close" class="w-7 h-7 flex justify-center items-center self-end">
+                            <i class="fa-solid fa-xmark fa-xl"></i>
+                        </div>
+                        <ul class="flex flex-col gap-4 lg:gap-8" role="menu">
+                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Home</a></li>
+                            <li><a href="#" class="font-semibold text-lg" role="menuitem">About</a></li>
+                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Services</a></li>
+                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Blog</a></li>
+                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Contact</a></li>
+                        </ul>
+                    </div>
+                    <button
+                        class="flex  justify-center items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
+                        aria-label="Contact Now">
+                        Contact Now
+                        <i class="fas fa-angles-right fa-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-5 lg:gap-8 bg-amber-400">
+                <ul class="flex gap-4 lg:gap-8" role="menu">
+                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Home</a></li>
+                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">About</a></li>
+                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Services</a></li>
+                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Blog</a></li>
+                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Contact</a></li>
+                </ul>
+                <button class="flex items-center justify-center border rounded-full w-7 h-7" aria-label="Search">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+                <button class="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
+                    aria-label="Contact Now">
+                    Contact Now
+                    <i class="fas fa-angles-right fa-xs"></i>
+                </button>
+                <button class="lg:hidden flex items-center justify-center px-5 py-2 bg-accent text-white rounded-3xl"
+                    aria-label="Contact Now">
+                    <i class="fas fa-headset"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="w-full h-full flex justify-between items-center ">
+            <div class="hidden lg:flex flex-col gap-4 px-20">
+                <h1 class="w-[75%] text-5xl font-bold">We hospital Doctors Patients <span
+                        class="text-accent underline">Service</span></h1>
+                <p class="w-[60%]">
+                    Medical ers piciatis unde omnis iste natus this the word medical this
+                    mountains, far from the countries Vokalia and, live the docor white
+                    teeth sitting on a dental for best medical.
+                </p>
+                <div class="flex flex-col border-l-4 border-l-blue-500 ps-2">
+                    <h3 class="font-bold text-blue text-2xl">Receive Medical Service.</h3>
+                    <p class="text-blue">Call us at: (+2) 56 541453</p>
+                </div>
+                <div class="flex gap-4">
+                    <button
+                        class="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
+                        aria-label="Contact Now">
+                        Contact Now
+                        <i class="fas fa-angles-right fa-xs"></i>
+                    </button>
+                    <button class="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-blue rounded-3xl"
+                        aria-label="Contact Now">
+                        Discover More
+                        <i class="fas fa-angles-right fa-xs"></i>
+                    </button>
+                </div>
+            </div>
+            <img src="../assets/images/banner-home.jpeg" alt="Beautiful hospital banner" class="h-full object-cover">
+        </div>
+    </header>
+
+    <main class="w-full bg-gray">
+        <section class="w-full h-32 flex justify-between  bg-blue px-12 relative">
+            <div class="flex items-center gap-10 ">
+                <div class="h-full relative flex ">
+                    <img src="../assets/images/support.jpg" alt="team-support" class="h-full">
+                    <div
+                        class="absolute top-0 right-[-60px] border-l-[30px] border-r-[30px] border-b-transparent border-t-[30px] border-b-[30px] border-t-transparent border-r-transparent border-l-accent">
+                    </div>
+                </div>
+                <div class="flex flex-col justify-end items-start gap-4 text-white">
+                    <h3 class="font-bold text-2xl">Meet The Team Support Medical Service.</h3>
+                    <P class="text-body">For us, there are no minor aspects, because a quality</P>
+                </div>
+            </div>
+            <div class="h-full flex items-center">
+                <button
+                    class=" h-10 hidden lg:flex items-center gap-2 font-bold text-blue px-5 py-2 bg-white rounded-3xl"
+                    aria-label="Booking Now">
+                    Booking Now
+                    <i class="fas fa-angles-right fa-xs"></i>
+                </button>
+            </div>
+        </section>
+
+
+        <section class="w-[80%]  mx-auto flex justify-between rounded-lg  bg-blue px-12 py-8 my-10 relative">
+            <div class="h-full flex flex-col justify-center items-center gap-1 text-white">
+                <div class="w-12 h-12 flex justify-center items-center rounded-[50%] bg-white ">
+                    <i class="fas fa-people-group fa-2xl"></i>
+                </div>
+                <h4 class="text-2xl">567+</h4>
+                <p>Active Client</p>
+            </div>
+            <div class="w-[1px] bg-body"></div>
+            <div class="h-full flex flex-col justify-center items-center gap-1 text-white">
+                <div class="w-12 h-12 flex justify-center items-center rounded-[50%] bg-white ">
+                    <i class="fas fa-headset fa-2xl"></i>
+                </div>
+                <h4 class="text-2xl">23K+</h4>
+                <p>Team Support</p>
+            </div>
+            <div class="w-[1px] bg-body"></div>
+
+            <div class="h-full flex flex-col justify-center items-center gap-1 text-white">
+                <div class="w-12 h-12 flex justify-center items-center rounded-[50%] bg-white ">
+                    <i class="fas fa-money-bill-trend-up fa-2xl"></i>
+                </div>
+                <h4 class="text-2xl">241+</h4>
+                <p>Projects Complete</p>
+            </div>
+            <div class="w-[1px] bg-body"></div>
+
+            <div class="h-full flex flex-col justify-center items-center gap-1 text-white ">
+                <div class="w-12 h-12 flex justify-center items-center rounded-[50%] bg-white ">
+                    <i class="fas fa-award fa-2xl text-accent"></i>
+                </div>
+                <h4 class="text-2xl">16K+</h4>
+                <p>Award Winner</p>
+            </div>
+        </section>
+
+
+        <section class="w-[90%] flex flex-col gap-4 mx-auto my-80">
+            <div class="h-4 flex items-center before:w-[4px] before:h-full before:rounded-lg before:bg-accent">
+                <h3 class="text-xl font-bold font-heading text-accent px-3">OUR BEST SERVICE</h3>
+            </div>
+
+            <div class="flex justify-between">
+                <h3 class="w-[22%] bg-amber-400 text-3xl font-bold pe-2"> High-Quality Services This Doctor</h3>
+                <p class="w-[35%] text-justify text-body">We are privileged to work with hundreds of future-thinking
+                    medial.
+                    including many of the world's top hardware, software, and brands .
+                    feel safe and comfortable in establishing.</p>
+            </div>
+            <div class="flex flex-wrap justify-between gap-4">
+                <div class="w-[23%] flex flex-col rounded-lg px-8 py-4 bg-white">
+                    <div class="w-14 h-14 flex justify-center items-center rounded-[50%] text-white bg-blue"><i
+                            class="fas fa-square-plus fa-2xl"></i></div>
+                    <h4 class="text-blue text-xl font-bold">Pharmacology</h4>
+                    <p class="text-body">Medical competitor research
+                        startup to financial</p>
+                </div>
+                <div class="w-[23%] flex flex-col rounded-lg px-8 py-4 bg-white">
+                    <div class="w-14 h-14 flex justify-center items-center rounded-[50%] text-white bg-blue"><i
+                            class="fas fa-x-ray fa-2xl"></i></div>
+                    <h4 class="text-blue text-xl font-bold">Orthopedic</h4>
+                    <p class="text-body">Medical competitor research
+                        startup to financial</p>
+                </div>
+                <div class="w-[23%] flex flex-col rounded-lg px-8 py-4 bg-white">
+                    <div class="w-14 h-14 flex justify-center items-center rounded-[50%] text-white bg-blue"><i
+                            class="fas fa-heart-pulse fa-2xl"></i></div>
+                    <h4 class="text-blue text-xl font-bold">Hematology</h4>
+                    <p class="text-body">Medical competitor research
+                        startup to financial</p>
+                </div>
+                <div class="w-[23%] flex flex-col rounded-lg px-8 py-4 bg-white">
+                    <div class="w-14 h-14 flex justify-center items-center rounded-[50%] text-white bg-blue"><i
+                            class="fas fa-user-doctor fa-2xl"></i></div>
+                    <h4 class="text-blue text-xl font-bold">Plastic Surgery</h4>
+                    <p class="text-body">Medical competitor research
+                        startup to financial</p>
+                </div>
+                <div class="w-[23%] flex flex-col rounded-lg px-8 py-4 bg-white">
+                    <div class="w-14 h-14 flex justify-center items-center rounded-[50%] text-white bg-blue"><i
+                            class="fas fa-head-side-virus fa-2xl"></i></div>
+                    <h4 class="text-blue text-xl font-bold">Neurology</h4>
+                    <p class="text-body">Medical competitor research
+                        startup to financial</p>
+                </div>
+                <div class="w-[23%] flex flex-col rounded-lg px-8 py-4 bg-white">
+                    <div class="w-14 h-14 flex justify-center items-center rounded-[50%] text-white bg-blue"><i
+                            class="fas fa-eye fa-xl"></i></div>
+                    <h4 class="text-blue text-xl font-bold">Ophthalmology</h4>
+                    <p class="text-body">Medical competitor research
+                        startup to financial</p>
+                </div>
+                <div class="w-[23%] flex flex-col rounded-lg px-8 py-4 bg-white">
+                    <div class="w-14 h-14 flex justify-center items-center rounded-[50%] text-white bg-blue"><i
+                            class="fas fa-hospital-user fa-2xl"></i></div>
+                    <h4 class="text-blue text-xl font-bold">Dental Care</h4>
+                    <p class="text-body">Medical competitor research
+                        startup to financial</p>
+                </div>
+                <div class="w-[23%] flex flex-col rounded-lg px-8 py-4 bg-white">
+                    <div class="w-14 h-14 flex justify-center items-center rounded-[50%] text-white bg-blue"><i
+                            class="fas fa-bed-pulse fa-xl"></i></div>
+                    <h4 class="text-blue text-xl font-bold">Cardiology</h4>
+                    <p class="text-body">Medical competitor research
+                        startup to financial</p>
+                </div>
+            </div>
+            <div class="w-full flex justify-center items-center gap-4 text-center mx-auto">
+                <p class="w-[35rem] text-xl font-semibold font-heading px-3">
+                    Delivering tomorrow's health care for your family.
+                    medical this View
+                    <span class="text-accent"> SEE MORE <i class="fas fa-angles-right fa-xs"></i></span>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="relative min-h-[23rem]"
+        style="background-image: url('../assets/images/footer.jpg'); background-size: cover;">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div
+            class="relative w-full h-full flex flex-col lg:flex-row justify-around items-center gap-6 text-white lg:px-20 py-8">
+            <!-- Logo & Info Section -->
+            <section class="w-[90%] lg:w-[20rem] flex flex-col gap-8 lg:bg-accent p-5">
+                <a href="/">
+                    <img src="../assets/svgs/logo-white.svg" alt="Hospitium Logo" class="w-[80%]">
+                </a>
+                <hr>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <p>Open Hours:</p>
+                            <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-location-dot"></i>
+                        <p>13/A, Miranda Halim City.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-phone"></i>
+                        <p>099 695 695 3</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="#" aria-label="Facebook"
+                            class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn"
+                            class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" aria-label="GitHub"
+                            class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter"
+                            class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Links Section -->
+            <section class="w-[90%] lg:w-[70%] justify-around flex flex-col md:flex-row gap-16 p-5">
+                <div class="w-full md:w-[50%] flex justify-between">
+                    <div>
+                        <h2 class="text-xl font-bold pb-4">Service</h2>
+                        <ul class="space-y-2">
+                            <li><a href="#">Why Choose Us</a></li>
+                            <li><a href="#">Our Solutions</a></li>
+                            <li><a href="#">Partners</a></li>
+                            <li><a href="#">Core Values</a></li>
+                            <li><a href="#">Our Projects</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold pb-4">Quick Links</h2>
+                        <ul class="space-y-2">
+                            <li><a href="#">Residents</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Online Service</a></li>
+                            <li><a href="#">Visiting</a></li>
+                            <li><a href="#">Employment</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Recent Posts Section -->
+                <div class="w-full md:w-auto">
+                    <h2 class="text-xl font-bold pb-4">Recent Posts</h2>
+                    <div class="space-y-4">
+                        <article class="flex items-start gap-3">
+                            <img src="../assets/imagesposts/post-1.png" alt="Post 1"
+                                class="w-24 h-20 object-cover rounded-lg">
+                            <div>
+                                <p class="text-sm">23 Jun 2024</p>
+                                <h3 class="font-semibold">We Round Solution - York Blog</h3>
+                            </div>
+                        </article>
+                        <article class="flex items-start gap-3">
+                            <img src="../assets/imagesposts/post-2.png" alt="Post 2"
+                                class="w-24 h-20 object-cover rounded-lg">
+                            <div>
+                                <p class="text-sm">20 Jun 2024</p>
+                                <h3 class="font-semibold">The Medical Of This - Working Health</h3>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
 </body>
 
 </html>
