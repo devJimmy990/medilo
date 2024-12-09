@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../style/output.css">
+    <script src="../scripts/nav.js"></script>
+    <title>Medilo</title>
+</head>
+
+<body>
+    <header class="relative h-[30rem]">
+        <img src="../assets/images/banner.jpg" alt="Beautiful hospital banner"
+            class="w-full h-full absolute z-0 object-cover">
+        <nav
+            class="flex justify-between items-center px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-4 absolute top-0 w-full z-10">
+            <div class="w-full lg:w-[10rem] flex items-center justify-between ">
+                <a href="/" class="max-w-[8rem] lg:w-[120rem]">
+                    <img class="w-full" src="../assets/svgs/logo.svg" alt="Hospitium Logo">
+                </a>
+                <div id="menu" class="md:hidden flex items-center justify-center">
+                    <i class="fas fa-bars fa-lg"></i>
+                </div>
+                <div id="modal"
+                    class="w-[75%] md:w-[50%] h-screen lg:hidden hidden flex-col justify-between absolute top-0 end-0 z-40 p-4 text-white  bg-[#223361]">
+                    <div class="w-full flex flex-col">
+                        <div id="close" class="w-7 h-7 flex justify-center items-center self-end">
+                            <i class="fa-solid fa-xmark fa-xl"></i>
+                        </div>
+                        <ul class="flex flex-col gap-4 lg:gap-8" role="menu">
+                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Home</a></li>
+                            <li><a href="#" class="font-semibold text-lg" role="menuitem">About</a></li>
+                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Services</a></li>
+                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Blog</a></li>
+                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Contact</a></li>
+                        </ul>
+                    </div>
+                    <button
+                        class="flex  justify-center items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
+                        aria-label="Contact Now">
+                        Contact Now
+                        <i class="fas fa-angles-right fa-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="hidden md:flex items-center gap-5 lg:gap-8">
+                <ul class="flex gap-4 lg:gap-8" role="menu">
+                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Home</a></li>
+                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">About</a></li>
+                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Services</a></li>
+                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Blog</a></li>
+                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Contact</a></li>
+                </ul>
+                <button class="flex items-center justify-center border rounded-full w-7 h-7" aria-label="Search">
+                    <i class="fas fa-search fa-sm"></i>
+                </button>
+                <button class="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
+                    aria-label="Contact Now">
+                    Contact Now
+                    <i class="fas fa-angles-right fa-xs"></i>
+                </button>
+                <button class="lg:hidden flex items-center justify-center px-5 py-2 bg-accent text-white rounded-3xl"
+                    aria-label="Contact Now">
+                    <i class="fas fa-headset"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="hidden lg:block absolute top-[40%] left-[15%] z-10">
+            <h1 class="text-5xl font-bold text-white">About Page</h1>
+            <p class="text-white">
+                <a href="/index.html" class="hover:text-accent">Home</a> /
+                <span class="text-accent">About Page</span>
+            </p>
+        </div>
+    </header>
+
+    <!-- <main>
+        <section></section>
+
+        <section class="w-[80%] mx-auto flex justify-between border border-gray rounded-lg px-12  my-10 relative">
+            <div class="w-[15%] h-full flex flex-col justify-center items-center gap-1 py-8">
+                <div class="w-12 h-12 flex justify-center items-center rounded-[50%] bg-blue text-white ">
+                    <i class="fas fa-people-group fa-2xl"></i>
+                </div>
+                <h4 class="text-2xl">567+</h4>
+                <p>Active Client</p>
+            </div>
+            <div class="w-[1px] bg-gray"></div>
+            <div class="w-[15%] h-full flex flex-col justify-center items-center gap-1 py-8">
+                <div class="w-12 h-12 flex justify-center items-center rounded-[50%] bg-blue text-white ">
+                    <i class="fas fa-headset fa-2xl"></i>
+                </div>
+                <h4 class="text-2xl">23K+</h4>
+                <p>Team Support</p>
+            </div>
+            <div class="w-[1px] bg-gray"></div>
+
+            <div class="w-[15%] h-full flex flex-col justify-center items-center gap-1 py-8">
+                <div class="w-12 h-12 flex justify-center items-center rounded-[50%] bg-blue text-white ">
+                    <i class="fas fa-money-bill-trend-up fa-2xl"></i>
+                </div>
+                <h4 class="text-2xl">241+</h4>
+                <p>Projects Complete</p>
+            </div>
+            <div class="w-[1px] bg-gray"></div>
+
+            <div class="w-[15%] h-full flex flex-col justify-center items-center gap-1  py-8">
+                <div class="w-12 h-12 flex justify-center items-center rounded-[50%] bg-blue text-white ">
+                    <i class="fas fa-award fa-2xl"></i>
+                </div>
+                <h4 class="text-2xl">16K+</h4>
+                <p>Award Winner</p>
+            </div>
+        </section>
+
+
+        <section class="w-full relative">
+            <img class="w-full absolute z-0" src="../assets/images/footer.jpg" alt="Medical-Care" />
+            <div class="w-full h-full absolute z-1">
+                <div class="w-[45%]"></div>
+                <div class="w-[45%] relative">
+                    <div>
+                        <h3 class="text-3xl font-bold text-white">Our Watch Video</h3>
+                        <h2> Professional Medical Care Measure Medical.</h2>
+                        <p>We are privileged to work with hundreds of future-thinking medial,
+                            including many of the world's top hardware, software, and brands , feel
+                            safe and comfortable in establishing.
+                        </p>
+                    </div>
+                    <button
+                        class="hidden lg:flex items-center gap-2 font-bold text-blue px-5 py-2 bg-white rounded-3xl"
+                        aria-label="More Videos">
+                        Video More
+                        <i class="fas fa-angles-right fa-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-[90%] mx-auto flex justify-center items-center px-12 my-10 relative">
+            <div class="flex flex-col justify-center items-center gap-4">
+                <h4 class="text-lg font-bold text-accent">Our Team Member</h4>
+                <h2 class="w-[40%] text-center text-3xl font-bold">Meet Our Specialist This Doctor Meeting</h2>
+                <div class="w-full flex flex-wrap justify-between items-center">
+                    <div class="w-[24%] h-72"><img class="h-full rounded-xl" src="../assets/images/doctors/doctor-0.jpg"
+                            alt="doctor-0"></div>
+                    <div class="w-[24%] h-72"><img class="h-full rounded-xl" src="../assets/images/doctors/doctor-1.jpg"
+                            alt="doctor-1"></div>
+                    <div class="w-[24%] h-72"><img class="h-full rounded-xl" src="../assets/images/doctors/doctor-2.jpg"
+                            alt="doctor-2"></div>
+                    <div class="w-[24%] h-72"><img class="h-full rounded-xl" src="../assets/images/doctors/doctor-3.jpg"
+                            alt="doctor-3"></div>
+                </div>
+            </div>
+        </section>
+
+    </main> -->
+    <main>
+        <!-- Metrics Section -->
+
+
+        <section class="w-[90%] h-[40rem] mx-auto flex justify-center items-center gap-16 my-20 relative ">
+            <div class="w-[47%] h-full flex items-center relative">
+                <div class="h-[75%] flex absolute inset-0 ">
+                    <img class="w-[75%] h-full object-cover" src="../assets/images/banner-home.jpeg" alt="about">
+
+                    <div class=" flex justify-center items-center gap-4 absolute inset-y-0 right-0 rotate-90">
+                        <p class="text-blue font-bold text-xl rotate-180">How We Work</p>
+                        <div
+                            class=" w-16 h-16 flex justify-center items-center rounded-full border-[10px]  border-[#d2ecfd] bg-accent text-white rotate-180">
+                            <i class="fas fa-play fa-lg text-white"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full h-[35%] flex justify-center items-center absolute bottom-[1rem] end-0 z-1 ">
+                    <img class="w-[65%] h-full object-cover  self-end absolute  end-0" src="../assets/images/about.jpg"
+                        alt="about">
+                    <!-- <img src="../assets/images/about.jpg" alt="about"/> -->
+                    <div
+                        class="w-32 h-32 flex flex-col justify-center items-center rounded-full absolute start-48 top-[-4px] z-5 border-[10px] bg-blue text-white">
+                        <h5 class="text-3xl font-bold">26+</h5>
+                        <p class="text-sm">Experience</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full lg:w-[40%] h-full flex flex-1 flex-col justify-between items-start gap-6 ">
+                <div class="w-[90%] flex flex-col justify-center items-start gap-4">
+                    <!-- Heading Section -->
+                    <div class="max-w-[80%] flex flex-col gap-8">
+                        <div class="flex items-center">
+                            <h3 class="text-xl font-bold ps-4 border-l-4 border-blue">OUR ABOUT US</h3>
+                        </div>
+                        <h2 class="text-2xl lg:text-3xl font-bold">More Than 26+ Years About Provide Medical.</h2>
+                        <p class="text-gray-600">
+                            We are privileged to work with hundreds of future-thinking medical organizations, including
+                            many
+                            of the
+                            world's top hardware, software, and brands. Feel safe and comfortable in establishing.
+                        </p>
+                    </div>
+
+                    <!-- Support Cards -->
+                    <div class="w-full flex flex-col sm:flex-row justify-between gap-4">
+                        <!-- Client Support -->
+                        <div class="w-full sm:w-[48%] flex flex-col gap-3 bg-gray-100 p-4">
+                            <h4 class="text-xl text-blue font-bold">Client Support</h4>
+                            <hr class="my-2">
+                            <p class="text-gray-600">But must explain to you the medical process and pain relief.</p>
+                        </div>
+
+                        <!-- Doctor Support -->
+                        <div class="w-full sm:w-[48%] flex flex-col gap-3 bg-gray-100 p-4">
+                            <h4 class="text-xl text-blue font-bold">Doctor Support</h4>
+                            <hr class="my-2">
+                            <p class="text-gray-600">But must explain to you the medical process and pain relief.</p>
+                        </div>
+                    </div>
+
+                    <!-- Read More Section -->
+                    <div>
+                        <p class="w-[60%] text-gray-600">
+                            There are many variations of processes available in this medical service team.
+                            <span class="font-bold text-accent underline">READ MORE +</span>
+                        </p>
+                    </div>
+
+                    <!-- Button -->
+                    <div>
+                        <button
+                            class="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue-600"
+                            aria-label="About More">
+                            About More
+                            <i class="fas fa-angles-right fa-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Decorative Image -->
+                <img src="../assets/images/stethoscope.png" alt="stethoscope"
+                    class="absolute end-0 bottom-0 max-w-[10rem] z-0 opacity-50">
+            </div>
+        </section>
+
+        <section
+            class="h-48 container mx-auto my-10 flex flex-wrap justify-between gap-6 border border-gray-300 rounded-lg p-6">
+            <!-- Metric Item -->
+            <article class="flex-1 min-w-[10rem] flex flex-col items-center gap-2 text-center">
+                <div class="w-16 h-16 flex justify-center items-center rounded-full bg-blue text-white">
+                    <i class="fas fa-people-group fa-2xl"></i>
+                </div>
+                <h4 class="text-2xl font-bold">567+</h4>
+                <p class="text-sm">Active Clients</p>
+            </article>
+            <!-- Divider -->
+            <div class="hidden lg:block w-[1px] bg-gray-300"></div>
+            <!-- Metric Item -->
+            <article class="flex-1 min-w-[10rem] flex flex-col items-center gap-2 text-center">
+                <div class="w-16 h-16 flex justify-center items-center rounded-full bg-blue text-white">
+                    <i class="fas fa-headset fa-2xl"></i>
+                </div>
+                <h4 class="text-2xl font-bold">23K+</h4>
+                <p class="text-sm">Team Support</p>
+            </article>
+            <!-- Divider -->
+            <div class="hidden lg:block w-[1px] bg-gray-300"></div>
+            <!-- Metric Item -->
+            <article class="flex-1 min-w-[10rem] flex flex-col items-center gap-2 text-center">
+                <div class="w-16 h-16 flex justify-center items-center rounded-full bg-blue text-white">
+                    <i class="fas fa-money-bill-trend-up fa-2xl"></i>
+                </div>
+                <h4 class="text-2xl font-bold">241+</h4>
+                <p class="text-sm">Projects Completed</p>
+            </article>
+            <!-- Divider -->
+            <div class="hidden lg:block w-[1px] bg-gray-300"></div>
+            <!-- Metric Item -->
+            <article class="flex-1 min-w-[10rem] flex flex-col items-center gap-2 text-center">
+                <div class="w-16 h-16 flex justify-center items-center rounded-full bg-blue text-white">
+                    <i class="fas fa-award fa-2xl"></i>
+                </div>
+                <h4 class="text-2xl font-bold">16K+</h4>
+                <p class="text-sm">Award Winners</p>
+            </article>
+        </section>
+        <!-- Video Section -->
+        <section
+            class="relative w-full flex flex-col md:flex-row items-center bg-cover bg-center py-16 text-white gap-10 md:gap-0"
+            style="background-image: url('../assets/images/footer.jpg');">
+            <div class="md:w-[45%] flex justify-center items-center gap-3 group cursor-pointer">
+                <div
+                    class="w-14 h-14 flex justify-center items-center rounded-full bg-white text-blue border-4 border-transparent group-hover:border-gray transition-all">
+                    <i class="fas fa-play fa-xl"></i>
+                </div>
+                <p class="text-xl font-bold">Watch Video</p>
+            </div>
+            <div class="md:w-[45%] container mx-auto flex flex-col items-start gap-4 px-6">
+                <div class="space-y-4">
+                    <h3 class="text-3xl font-bold">Our Watch Video</h3>
+                    <h2 class="text-2xl font-semibold">Professional Medical Care & Measures</h2>
+                    <p>We are privileged to work with hundreds of future-thinking medical professionals worldwide.
+                        Experience safety and comfort with us.</p>
+                </div>
+                <button
+                    class="hidden lg:flex items-center gap-2 bg-white text-blue px-6 py-3 rounded-full font-bold transition-all hover:shadow-md">
+                    More Videos
+                    <i class="fas fa-angles-right fa-xs"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="container mx-auto my-10 text-center space-y-8">
+            <header>
+                <h4 class="text-lg font-bold text-blue-500">Our Team Members</h4>
+                <h2 class="text-3xl font-bold">Meet Our Specialists</h2>
+            </header>
+            <div class="flex flex-wrap justify-center gap-6">
+                <!-- Doctor Card -->
+                <figure class="w-56 h-72">
+                    <img class="w-full h-full object-cover rounded-xl" src="../assets/images/doctors/doctor-0.jpg"
+                        alt="Doctor 0" loading="lazy">
+                </figure>
+                <figure class="w-56 h-72">
+                    <img class="w-full h-full object-cover rounded-xl" src="../assets/images/doctors/doctor-1.jpg"
+                        alt="Doctor 1" loading="lazy">
+                </figure>
+                <figure class="w-56 h-72">
+                    <img class="w-full h-full object-cover rounded-xl" src="../assets/images/doctors/doctor-2.jpg"
+                        alt="Doctor 2" loading="lazy">
+                </figure>
+                <figure class="w-56 h-72">
+                    <img class="w-full h-full object-cover rounded-xl" src="../assets/images/doctors/doctor-3.jpg"
+                        alt="Doctor 3" loading="lazy">
+                </figure>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="relative min-h-[23rem]"
+        style="background-image: url('../assets/images/footer.jpg'); background-size: cover;">
+        <div class="absolute inset-0 bg-black/50"></div>
+        <div class="relative w-full h-full flex flex-col lg:flex-row justify-around items-center gap-6 lg:px-20 py-8">
+            <!-- Logo & Info Section -->
+            <section class="w-[90%] lg:w-[20rem] flex flex-col gap-8 lg:bg-accent p-5">
+                <a href="/">
+                    <img src="../assets/svgs/logo-white.svg" alt="Hospitium Logo" class="w-[80%]">
+                </a>
+                <hr>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <p>Open Hours:</p>
+                            <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-location-dot"></i>
+                        <p>13/A, Miranda Halim City.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-phone"></i>
+                        <p>099 695 695 3</p>
+                    </div>
+                    <div class="flex gap-3">
+                        <a href="#" aria-label="Facebook"
+                            class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn"
+                            class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" aria-label="GitHub"
+                            class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter"
+                            class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Links Section -->
+            <section class="w-[90%] lg:w-[70%] justify-around flex flex-col md:flex-row gap-16 p-5">
+                <div class="w-full md:w-[50%] flex justify-between">
+                    <div>
+                        <h2 class="text-xl font-bold pb-4">Service</h2>
+                        <ul class="space-y-2">
+                            <li><a href="#">Why Choose Us</a></li>
+                            <li><a href="#">Our Solutions</a></li>
+                            <li><a href="#">Partners</a></li>
+                            <li><a href="#">Core Values</a></li>
+                            <li><a href="#">Our Projects</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold pb-4">Quick Links</h2>
+                        <ul class="space-y-2">
+                            <li><a href="#">Residents</a></li>
+                            <li><a href="#">Business</a></li>
+                            <li><a href="#">Online Service</a></li>
+                            <li><a href="#">Visiting</a></li>
+                            <li><a href="#">Employment</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Recent Posts Section -->
+                <div class="w-full md:w-auto">
+                    <h2 class="text-xl font-bold pb-4">Recent Posts</h2>
+                    <div class="space-y-4">
+                        <article class="flex items-start gap-3">
+                            <img src="../assets/images/posts/post-1.png" alt="Post 1"
+                                class="w-24 h-20 object-cover rounded-lg">
+                            <div>
+                                <p class="text-sm">23 Jun 2024</p>
+                                <h3 class="font-semibold">We Round Solution - York Blog</h3>
+                            </div>
+                        </article>
+                        <article class="flex items-start gap-3">
+                            <img src="../assets/images/posts/post-2.png" alt="Post 2"
+                                class="w-24 h-20 object-cover rounded-lg">
+                            <div>
+                                <p class="text-sm">20 Jun 2024</p>
+                                <h3 class="font-semibold">The Medical Of This - Working Health</h3>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+</body>
+
+</html>
