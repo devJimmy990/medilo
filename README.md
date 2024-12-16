@@ -23,7 +23,7 @@ This project is a responsive and modern web interface built with **HTML** and **
 2. generates the CSS file:
 
    ```bash
-  npm run watch
+   npm run watch
    ```
-   
+
 3. open project with live server
