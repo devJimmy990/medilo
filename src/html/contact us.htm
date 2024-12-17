@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-50 font-sans">
+    <!-- Contact Form Section -->
+    <section class="container mx-auto my-12 max-w-5xl">
+      <div class="grid md:grid-cols-2 gap-1 items-center">
+        <div>
+          <img
+            src="../assets/images/contact_2.png"
+            alt="Doctor"
+            class="rounded-lg shadow-lg"
+          />
+        </div>
+        <div>
+          <h3 class="text-3xl font-bold mb-4">
+            Meet Our Specialist This <br />
+            Doctor Meet
+          </h3>
+          <form class="space-y-4">
+            <input
+              type="text"
+              placeholder="Your name"
+              class="w-full border border-gray-100 p-3 rounded-lg"
+            />
+            <input
+              type="email"
+              placeholder="Your email"
+              class="w-full border border-gray-300 p-3 rounded-lg"
+            />
+            <input
+              type="text"
+              placeholder="Your Subject"
+              class="w-full border border-gray-300 p-3 rounded-lg"
+            />
+            <input
+              type="text"
+              placeholder="Your phone"
+              class="w-full border border-gray-300 p-3 rounded-lg"
+            />
+            <textarea
+              placeholder="Your comments"
+              class="w-full border border-gray-300 p-3 rounded-lg"
+            ></textarea>
+            <input
+              type="text"
+              placeholder="Type the below word"
+              class="w-full border border-gray-300 p-3 rounded-lg"
+            />
+            <button
+              type="submit"
+              class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg"
+            >
+              Send Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="bg-gray-200 py-8">
+      <div class="container mx-auto">
+        <div class="w-full h-64">
+          <!-- Google Maps Embed -->
+          <iframe
+            class="w-full h-full rounded-lg"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093703!2d144.95373531562024!3d-37.816279742021735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf57769e77b79d8f3!2sFederation%20Square!5e0!3m2!1sen!2sus!4v1616798142976!5m2!1sen!2sus"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

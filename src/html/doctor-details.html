@@ -1,507 +1,784 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Details of Doctor , his Specialist , his experience and his certificate "
+    />
+    <link rel="icon" type="image/x-icon" href="./images/logo.svg" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="../style/output.css" rel="stylesheet" />
+    <title>Medilo</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Details of Doctor , his Specialist , his experience and his certificate " />
-  <link rel="icon" type="image/x-icon" href="./images/logo.svg" />
-  <script src="../scripts/detaildoctor.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="../style/output.css" rel="stylesheet">
-  <title>Medilo</title>
-</head>
-
-<body>
-  <header class="relative h-[30rem]">
-    <img src="../assets/images/banner.jpg" alt="Beautiful hospital banner"
-      class="w-full h-full absolute z-0 object-cover">
-    <nav
-      class="flex justify-between items-center px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-4 absolute top-0 w-full z-10">
-      <div class="w-full lg:w-[10rem] flex items-center justify-between ">
-        <a href="/" class="max-w-[8rem] lg:w-[120rem]">
-          <img class="w-full" src="../assets/svgs/logo.svg" alt="Hospitium Logo">
-        </a>
-        <div id="menu" class="md:hidden flex items-center justify-center">
-          <i class="fas fa-bars fa-lg"></i>
-        </div>
-        <div id="modal"
-          class="w-[75%] md:w-[50%] h-screen lg:hidden hidden flex-col justify-between absolute top-0 end-0 z-40 p-4 text-white  bg-[#223361]">
-          <div class="w-full flex flex-col">
-            <div id="close" class="w-7 h-7 flex justify-center items-center self-end">
-              <i class="fa-solid fa-xmark fa-xl"></i>
-            </div>
-            <ul class="flex flex-col gap-4 lg:gap-8" role="menu">
-              <li><a href="#" class="font-semibold text-lg" role="menuitem">Home</a></li>
-              <li><a href="#" class="font-semibold text-lg" role="menuitem">About</a></li>
-              <li><a href="#" class="font-semibold text-lg" role="menuitem">Services</a></li>
-              <li><a href="#" class="font-semibold text-lg" role="menuitem">Blog</a></li>
-              <li><a href="#" class="font-semibold text-lg" role="menuitem">Contact</a></li>
-            </ul>
+  <body>
+    <header class="relative h-[30rem]">
+      <img
+        src="../assets/images/banner.jpg"
+        alt="Beautiful hospital banner"
+        class="w-full h-full absolute z-0 object-cover"
+      />
+      <nav
+        class="flex justify-between items-center px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-4 absolute top-0 w-full z-10"
+      >
+        <div class="w-full lg:w-[10rem] flex items-center justify-between">
+          <a href="/" class="max-w-[8rem] lg:w-[120rem]">
+            <img
+              class="w-full"
+              src="../assets/svgs/logo.svg"
+              alt="Hospitium Logo"
+            />
+          </a>
+          <div id="menu" class="md:hidden flex items-center justify-center">
+            <i class="fas fa-bars fa-lg"></i>
           </div>
-          <button class="flex  justify-center items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
-            aria-label="Contact Now">
+          <div
+            id="modal"
+            class="w-[75%] md:w-[50%] h-screen lg:hidden hidden flex-col justify-between absolute top-0 end-0 z-40 p-4 text-white bg-[#223361]"
+          >
+            <div class="w-full flex flex-col">
+              <div
+                id="close"
+                class="w-7 h-7 flex justify-center items-center self-end"
+              >
+                <i class="fa-solid fa-xmark fa-xl"></i>
+              </div>
+              <ul class="flex flex-col gap-4 lg:gap-8" role="menu">
+                <li>
+                  <a href="#" class="font-semibold text-lg" role="menuitem"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-semibold text-lg" role="menuitem"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-semibold text-lg" role="menuitem"
+                    >Services</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-semibold text-lg" role="menuitem"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="font-semibold text-lg" role="menuitem"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <button
+              class="flex justify-center items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
+              aria-label="Contact Now"
+            >
+              Contact Now
+              <i class="fas fa-angles-right fa-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="hidden md:flex items-center gap-5 lg:gap-8">
+          <ul class="flex gap-4 lg:gap-8" role="menu">
+            <li>
+              <a
+                href="#"
+                class="font-semibold hover:text-accent"
+                role="menuitem"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-semibold hover:text-accent"
+                role="menuitem"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-semibold hover:text-accent"
+                role="menuitem"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-semibold hover:text-accent"
+                role="menuitem"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="font-semibold hover:text-accent"
+                role="menuitem"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <button
+            class="flex items-center justify-center border rounded-full w-7 h-7"
+            aria-label="Search"
+          >
+            <i class="fas fa-search fa-sm"></i>
+          </button>
+          <button
+            class="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
+            aria-label="Contact Now"
+          >
             Contact Now
             <i class="fas fa-angles-right fa-xs"></i>
           </button>
+          <button
+            class="lg:hidden flex items-center justify-center px-5 py-2 bg-accent text-white rounded-3xl"
+            aria-label="Contact Now"
+          >
+            <i class="fas fa-headset"></i>
+          </button>
         </div>
-      </div>
+      </nav>
 
-      <div class="hidden md:flex items-center gap-5 lg:gap-8">
-        <ul class="flex gap-4 lg:gap-8" role="menu">
-          <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Home</a></li>
-          <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">About</a></li>
-          <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Services</a></li>
-          <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Blog</a></li>
-          <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Contact</a></li>
-        </ul>
-        <button class="flex items-center justify-center border rounded-full w-7 h-7" aria-label="Search">
-          <i class="fas fa-search fa-sm"></i>
-        </button>
-        <button class="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
-          aria-label="Contact Now">
-          Contact Now
-          <i class="fas fa-angles-right fa-xs"></i>
-        </button>
-        <button class="lg:hidden flex items-center justify-center px-5 py-2 bg-accent text-white rounded-3xl"
-          aria-label="Contact Now">
-          <i class="fas fa-headset"></i>
-        </button>
-      </div>
-    </nav>
-
-    <div class="hidden lg:block absolute top-[40%] left-[15%] z-10">
-      <h1 class="text-5xl font-bold text-white">Our Doctors</h1>
-      <p class="text-white">
-        <a href="/index.html" class="hover:text-accent">Home</a> /
-        <span class="text-accent">Our Doctors</span>
-      </p>
-    </div>
-  </header>
-  <main>
-
-    <section class="detail-doctor grid grid-cols-1 md:grid-cols-2 container mx-auto my-10 max-w-5xl">
-      <img class="h-auto sm:w-10/12 mx-auto md:max-w-sm lg:max-w-sm rounded-md"
-        src="../assets/images/doctors/doctor-2.jpg" alt="image description" />
-      <div class="content container">
-        <h2 class="font-bold text-2xl">Dr/ Ahmed Mohamed</h2>
-        <p class="text-sm text-gray-500 mt-.5">Manager</p>
-        <p class="text-gray-500 mt-4">
-          We iraual desktop offers a fast and reliable best form anywhere .
-          Artily powerful tool where your data and applications are secured in a
-          private location in the prestigious telehouse data center in london
+      <div class="hidden lg:block absolute top-[40%] left-[15%] z-10">
+        <h1 class="text-5xl font-bold text-white">Our Doctors</h1>
+        <p class="text-white">
+          <a href="/index.html" class="hover:text-accent">Home</a> /
+          <span class="text-accent">Our Doctors</span>
         </p>
-        <p class="text-gray-500 mt-6">
-          The majority have suffered atteration in some form, by injexted
-          humourm or randomised words which son;t look even slightly believable,
-          if you are gouing ro use a passage of lrem ipusm . you need to be sure
-          ther isn't naything embarrassing hidden in the middle of text.
-        </p>
-        <div class="cards flex flex-wrap mt-6">
-          <div
-            class="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-gray-200 rounded-sm shadow flex items-center">
-            <div class="icon">
-              <i class="fa-solid fa-location-dot fa-2x w-7 h-7 mb-3 me-6"></i>
-            </div>
-            <div class="data">
-              <a href="#">
-                <h5 class="text-xl font-bold tracking-tight text-gray-900">
-                  Location
-                </h5>
-              </a>
-              <p class="mb-3 text-xs font-medium text-gray-500 dark:text-gray-500">
-                Dhaka , Dhaka 31
-              </p>
-            </div>
-          </div>
-          <div
-            class="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-gray-200 rounded-sm shadow flex items-center">
-            <div class="icon">
-              <i class="fa-solid fa-envelope fa-2x w-7 h-7 mb-3 me-6"></i>
-            </div>
-            <div class="data">
-              <a href="#">
-                <h5 class="text-xl font-bold tracking-tight text-gray-900">
-                  Email
-                </h5>
-              </a>
-              <p class="mb-3 text-xs font-medium text-gray-500 dark:text-gray-500">
-                ahmedmohamed11@gmail.com
-              </p>
-            </div>
-          </div>
-          <div
-            class="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-gray-200 rounded-sm shadow flex items-center">
-            <div class="icon">
-              <i class="fa-solid fa-certificate fa-2x w-7 h-7 mb-3 me-6"></i>
-            </div>
-            <div class="data">
-              <a href="#">
-                <h5 class="text-xl font-bold tracking-tight text-gray-900">
-                  Qualification
-                </h5>
-              </a>
-              <p class="mb-3 text-xs font-medium text-gray-500 dark:text-gray-500">
-                M.S.S
-              </p>
-            </div>
-          </div>
-          <div
-            class="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-gray-200 rounded-sm shadow flex items-center">
-            <div class="icon">
-              <i class="fa-solid fa-globe fa-2x w-7 h-7 mb-3 me-6"></i>
-            </div>
-            <div class="data">
-              <a href="#">
-                <h5 class="text-xl font-bold tracking-tight text-gray-900">
-                  Website
-                </h5>
-              </a>
-              <p class="mb-3 text-xs font-medium text-gray-500 dark:text-gray-500">
-                demo.com
-              </p>
-            </div>
-          </div>
-          <div
-            class="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-gray-200 rounded-sm shadow flex items-center">
-            <div class="icon">
-              <i class="fa-solid fa-suitcase fa-2x w-7 h-7 mb-3 me-6"></i>
-            </div>
-            <div class="data">
-              <a href="#">
-                <h5 class="text-xl font-bold tracking-tight text-gray-900">
-                  Experience
-                </h5>
-              </a>
-              <p class="mb-3 text-xs font-medium text-gray-500 dark:text-gray-500">
-                2-4 Years
-              </p>
-            </div>
-          </div>
-          <div
-            class="card sm:none w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-gray-200 rounded-sm shadow flex items-center">
-            <div class="icon"></div>
-            <div class="data">
-              <a href="#">
-                <h5 class="text-xl font-bold tracking-tight text-gray-900"></h5>
-              </a>
-              <p class="mb-3 text-xs font-medium text-gray-500 dark:text-gray-500"></p>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
-
-    <section class="info-doctor max-w-5xl mx-auto">
-      <p class="text-gray-500">
-        The majority have differed alteration in some form m=, by injected
-        humour or randomized words which don't look even slightly verifiable if
-        your are going to use a passage of lorem ipsum, you need to ve sure
-        there isn't anything embar assign hidden in ge editors now the middle of
-        all the lorem ipsum generators on the internet tend to repeat predefined
-        chunk readable content of a page when looking at its layout the point of
-        using lorem ipsum is that it has a more-or- less normal distribution of
-        letters as opposed to using content here making it look like readable
-        english many
-      </p>
-      <div class="progress-container flex flex-wrap justify-between mt-6">
-        <div class="progress w-full sm:w-full md:w-2/5 lg-w-2/5 my-2">
-          <div class="flex justify-between mb-1">
-            <span class="text-base font-medium text-blue-700">Medical</span>
-            <span class="text-sm font-medium text-blue-700">85%</span>
-          </div>
-          <div class="bg-gray-200 rounded-full h-2.5 bg-gray-300">
-            <div class="bg-blue-600 h-2.5 rounded-full style-background" data-set="85%"></div>
-          </div>
-        </div>
-        <div class="progress w-full sm:w-full md:w-2/5 lg-w-2/5 my-2">
-          <div class="flex justify-between mb-1">
-            <span class="text-base font-medium text-blue-700">Dental</span>
-            <span class="text-sm font-medium text-blue-700">89%</span>
-          </div>
-          <div class="bg-gray-200 rounded-full h-2.5 bg-gray-300">
-            <div class="bg-blue-600 h-2.5 rounded-full style-background" data-set="89%"></div>
-          </div>
-        </div>
-        <div class="progress w-full sm:w-full md:w-2/5 lg-w-2/5 my-2">
-          <div class="flex justify-between mb-1">
-            <span class="text-base font-medium text-blue-700">Medical LAb</span>
-            <span class="text-sm font-medium text-blue-700">69%</span>
-          </div>
-          <div class="bg-gray-200 rounded-full h-2.5 bg-gray-300">
-            <div class="bg-blue-600 h-2.5 rounded-full style-background" data-set="69%"></div>
-          </div>
-        </div>
-        <div class="progress w-full sm:w-full md:w-2/5 lg-w-2/5 my-2">
-          <div class="flex justify-between mb-1">
-            <span class="text-base font-medium text-blue-700">Solution</span>
-            <span class="text-sm font-medium text-blue-700">80%</span>
-          </div>
-          <div class="bg-gray-200 rounded-full h-2.5 bg-gray-300">
-            <div class="bg-blue-600 h-2.5 rounded-full style-background" data-set="80%"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="other-doctors max-w-5xl mx-auto my-11">
-      <div class="title text-center my-10">
-        <h4 class="flex items-center mx-auto w-fit relative">
-          <i class="fa-solid fa-minus rotate-90 absolute -left-1.5"></i>
-          <i class="fa-solid fa-minus fa-2x me-3"></i> our team members
-          <i class="fa-solid fa-minus fa-2x ms-3"></i>
-          <i class="fa-solid fa-minus rotate-90 absolute -right-1.5"></i>
-        </h4>
-        <h1 class="text-3xl w-96 mx-auto">
-          Meet Our Specialist This Doctor Meeting
-        </h1>
-      </div>
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="data-doctor p-4">
-                <h2 class="text-xl my-1">Rawan Selima</h2>
-                <h6 class="text-sm mb-1">Specialist in Cardiology</h6>
-                <p class="font-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio quasi voluptatibus odio similique deserunt debitis
-                  nihil dolor mollitia nobis ullam, dolorem ad,
-                </p>
-                <button type="button"
-                  class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                  Book Now
-                </button>
+    </header>
+    <main>
+      <section
+        class="detail-doctor grid grid-cols-1 md:grid-cols-2 container mx-auto my-10 max-w-5xl"
+      >
+        <img
+          class="h-auto sm:w-10/12 mx-auto md:max-w-sm lg:max-w-sm rounded-md"
+          src="../assets/images/doctors/doctor-2.jpg"
+          alt="image description"
+        />
+        <div class="content container">
+          <h2 class="font-bold text-2xl">Dr/ Ahmed Mohamed</h2>
+          <p class="text-sm text-[#676767] mt-.5">Manager</p>
+          <p class="text-[#676767] mt-4">
+            We iraual desktop offers a fast and reliable best form anywhere .
+            Artily powerful tool where your data and applications are secured in
+            a private location in the prestigious telehouse data center in
+            london
+          </p>
+          <p class="text-[#676767] mt-6">
+            The majority have suffered atteration in some form, by injexted
+            humourm or randomised words which son;t look even slightly
+            believable, if you are gouing ro use a passage of lrem ipusm . you
+            need to be sure ther isn't naything embarrassing hidden in the
+            middle of text.
+          </p>
+          <div class="cards flex flex-wrap mt-6">
+            <div
+              class="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-[#2fa7f7] rounded-sm shadow flex items-center"
+            >
+              <div class="icon">
+                <i
+                  class="fa-solid fa-location-dot fa-2x w-7 h-7 mb-3 me-6 text-[#2fa7f7]"
+                ></i>
               </div>
-              <img class="h-96 w-full rounded-lg" src="../assets/images/doctors/doctor-5.jpg" alt="" />
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="data-doctor p-4">
-                <h2 class="text-xl my-1">Rawan Selima</h2>
-                <h6 class="text-sm mb-1">Specialist in Cardiology</h6>
-                <p class="font-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio quasi voluptatibus odio similique deserunt debitis
-                  nihil dolor mollitia nobis ullam, dolorem ad,
+              <div class="data">
+                <a href="#">
+                  <h5 class="text-xl font-bold tracking-tight text-gray-900">
+                    Location
+                  </h5>
+                </a>
+                <p class="mb-3 text-xs font-medium text-[#676767]">
+                  Dhaka , Dhaka 31
                 </p>
-                <button type="button"
-                  class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                  Book Now
-                </button>
               </div>
-              <img class="h-96 w-full rounded-lg" src="../assets/images/doctors/doctor-7.jpg" alt="" />
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="data-doctor p-4">
-                <h2 class="text-xl my-1">Rawan Selima</h2>
-                <h6 class="text-sm mb-1">Specialist in Cardiology</h6>
-                <p class="font-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio quasi voluptatibus odio similique deserunt debitis
-                  nihil dolor mollitia nobis ullam, dolorem ad,
+            <div
+              class="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-[#2fa7f7] rounded-sm shadow flex items-center"
+            >
+              <div class="icon">
+                <i
+                  class="fa-solid fa-envelope fa-2x w-7 h-7 mb-3 me-6 text-[#2fa7f7]"
+                ></i>
+              </div>
+              <div class="data">
+                <a href="#">
+                  <h5 class="text-xl font-bold tracking-tight text-gray-900">
+                    Email
+                  </h5>
+                </a>
+                <p
+                  class="mb-3 text-xs font-medium text-[#676767]"
+                >
+                  ahmedmohamed11@gmail.com
                 </p>
-                <button type="button"
-                  class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                  Book Now
-                </button>
               </div>
-              <img class="h-96 w-full rounded-lg" src="../assets/images/doctors/doctor-8.jpg" alt="" />
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="data-doctor p-4">
-                <h2 class="text-xl my-1">Rawan Selima</h2>
-                <h6 class="text-sm mb-1">Specialist in Cardiology</h6>
-                <p class="font-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio quasi voluptatibus odio similique deserunt debitis
-                  nihil dolor mollitia nobis ullam, dolorem ad,
+            <div
+              class="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-[#2fa7f7] rounded-sm shadow flex items-center"
+            >
+              <div class="icon">
+                <i
+                  class="fa-solid fa-certificate fa-2x w-7 h-7 mb-3 me-6 text-[#2fa7f7]"
+                ></i>
+              </div>
+              <div class="data">
+                <a href="#">
+                  <h5 class="text-xl font-bold tracking-tight text-gray-900">
+                    Qualification
+                  </h5>
+                </a>
+                <p
+                  class="mb-3 text-xs font-medium text-[#676767]"
+                >
+                  M.S.S
                 </p>
-                <button type="button"
-                  class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                  Book Now
-                </button>
               </div>
-              <img class="h-96 w-full rounded-lg" src="../assets/images/doctors/doctor-6.jpg" alt="" />
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="data-doctor p-4">
-                <h2 class="text-xl my-1">Rawan Selima</h2>
-                <h6 class="text-sm mb-1">Specialist in Cardiology</h6>
-                <p class="font-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio quasi voluptatibus odio similique deserunt debitis
-                  nihil dolor mollitia nobis ullam, dolorem ad,
+            <div
+              class="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-[#2fa7f7] rounded-sm shadow flex items-center"
+            >
+              <div class="icon">
+                <i
+                  class="fa-solid fa-globe fa-2x w-7 h-7 mb-3 me-6 text-[#2fa7f7]"
+                ></i>
+              </div>
+              <div class="data">
+                <a href="#">
+                  <h5 class="text-xl font-bold tracking-tight text-gray-900">
+                    Website
+                  </h5>
+                </a>
+                <p
+                  class="mb-3 text-xs font-medium text-[#676767]"
+                >
+                  demo.com
                 </p>
-                <button type="button"
-                  class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                  Book Now
-                </button>
               </div>
-              <img class="h-96 w-full rounded-lg" src="../assets/images/doctors/doctor-1.jpg" alt="" />
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="data-doctor p-4">
-                <h2 class="text-xl my-1">Rawan Selima</h2>
-                <h6 class="text-sm mb-1">Specialist in Cardiology</h6>
-                <p class="font-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio quasi voluptatibus odio similique deserunt debitis
-                  nihil dolor mollitia nobis ullam, dolorem ad,
+            <div
+              class="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-[#2fa7f7] rounded-sm shadow flex items-center"
+            >
+              <div class="icon">
+                <i
+                  class="fa-solid fa-suitcase fa-2x w-7 h-7 mb-3 me-6 text-[#2fa7f7]"
+                ></i>
+              </div>
+              <div class="data">
+                <a href="#">
+                  <h5 class="text-xl font-bold tracking-tight text-gray-900">
+                    Experience
+                  </h5>
+                </a>
+                <p
+                  class="mb-3 text-xs font-medium text-[#676767] dark:text-[#676767]"
+                >
+                  2-4 Years
                 </p>
-                <button type="button"
-                  class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                  Book Now
-                </button>
               </div>
-              <img class="h-96 w-full rounded-lg" src="../assets/images/doctors/doctor-2.jpg" alt="" />
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="data-doctor p-4">
-                <h2 class="text-xl my-1">Rawan Selima</h2>
-                <h6 class="text-sm mb-1">Specialist in Cardiology</h6>
-                <p class="font-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio quasi voluptatibus odio similique deserunt debitis
-                  nihil dolor mollitia nobis ullam, dolorem ad,
-                </p>
-                <button type="button"
-                  class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                  Book Now
-                </button>
+            <div
+              class="card sm:none w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-[#2fa7f7] rounded-sm shadow flex items-center"
+            >
+              <div class="icon"></div>
+              <div class="data">
+                <a href="#">
+                  <h5
+                    class="text-xl font-bold tracking-tight text-gray-900"
+                  ></h5>
+                </a>
+                <p
+                  class="mb-3 text-xs font-medium text-[#676767] dark:text-gray-500"
+                ></p>
               </div>
-              <img class="h-96 w-full rounded-lg object-cover" src="../assets/images/doctors/doctor-3.jpg" alt="" />
             </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="card">
-              <div class="data-doctor p-4">
-                <h2 class="text-xl my-1">Rawan Selima</h2>
-                <h6 class="text-sm mb-1">Specialist in Cardiology</h6>
-                <p class="font-normal">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Distinctio quasi voluptatibus odio similique deserunt debitis
-                  nihil dolor mollitia nobis ullam, dolorem ad,
-                </p>
-                <button type="button"
-                  class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">
-                  Book Now
-                </button>
-              </div>
-              <img class="h-96 w-full rounded-lg object-cover" src="../assets/images/doctors/doctor-4.jpg" alt="" />
-            </div>
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="relative min-h-[23rem]"
-    style="background-image: url('../assets/images/footer.jpg'); background-size: cover;">
-    <div class="absolute inset-0 bg-black/50"></div>
-    <div
-      class="relative w-full h-full flex flex-col lg:flex-row justify-around items-center gap-6 text-white lg:px-20 py-8">
-      <!-- Logo & Info Section -->
-      <section class="w-[90%] lg:w-[20rem] flex flex-col gap-8 lg:bg-accent p-5">
-        <a href="/">
-          <img src="../assets/svgs/logo-white.svg" alt="Hospitium Logo" class="w-[80%]">
-        </a>
-        <hr>
-        <div class="space-y-4">
-          <div class="flex items-start gap-3">
-            <i class="fas fa-clock"></i>
-            <div>
-              <p>Open Hours:</p>
-              <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <i class="fas fa-location-dot"></i>
-            <p>13/A, Miranda Halim City.</p>
-          </div>
-          <div class="flex items-start gap-3">
-            <i class="fas fa-phone"></i>
-            <p>099 695 695 3</p>
-          </div>
-          <div class="flex gap-3">
-            <a href="#" aria-label="Facebook"
-              class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" aria-label="LinkedIn"
-              class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" aria-label="GitHub" class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="#" aria-label="Twitter" class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
-              <i class="fab fa-twitter"></i>
-            </a>
           </div>
         </div>
       </section>
 
-      <!-- Links Section -->
-      <section class="w-[90%] lg:w-[70%] justify-around flex flex-col md:flex-row gap-16 p-5">
-        <div class="w-full md:w-[50%] flex justify-between">
-          <div>
-            <h2 class="text-xl font-bold pb-4">Service</h2>
-            <ul class="space-y-2">
-              <li><a href="#">Why Choose Us</a></li>
-              <li><a href="#">Our Solutions</a></li>
-              <li><a href="#">Partners</a></li>
-              <li><a href="#">Core Values</a></li>
-              <li><a href="#">Our Projects</a></li>
-            </ul>
+      <section class="info-doctor max-w-5xl mx-auto">
+        <p class="text-[#676767]">
+          The majority have differed alteration in some form m=, by injected
+          humour or randomized words which don't look even slightly verifiable
+          if your are going to use a passage of lorem ipsum, you need to ve sure
+          there isn't anything embar assign hidden in ge editors now the middle
+          of all the lorem ipsum generators on the internet tend to repeat
+          predefined chunk readable content of a page when looking at its layout
+          the point of using lorem ipsum is that it has a more-or- less normal
+          distribution of letters as opposed to using content here making it
+          look like readable english many
+        </p>
+        <div class="progress-container flex flex-wrap justify-between mt-6">
+          <div class="progress w-full sm:w-full md:w-2/5 lg-w-2/5 my-2">
+            <div class="flex justify-between mb-1">
+              <span class="text-base font-medium text-[#2fa7f7]">Medical</span>
+              <span class="text-sm font-medium text-[#2fa7f7]">85%</span>
+            </div>
+            <div class="rounded-full h-2.5 bg-[#eaeaea]">
+              <div
+                class="bg-[#2fa7f7] h-2.5 rounded-full style-background duration-500 w-0"
+                data-set="85%"
+              ></div>
+            </div>
           </div>
-          <div>
-            <h2 class="text-xl font-bold pb-4">Quick Links</h2>
-            <ul class="space-y-2">
-              <li><a href="#">Residents</a></li>
-              <li><a href="#">Business</a></li>
-              <li><a href="#">Online Service</a></li>
-              <li><a href="#">Visiting</a></li>
-              <li><a href="#">Employment</a></li>
-            </ul>
+          <div class="progress w-full sm:w-full md:w-2/5 lg-w-2/5 my-2">
+            <div class="flex justify-between mb-1">
+              <span class="text-base font-medium text-blue-700 text-[#2fa7f7]">Dental</span>
+              <span class="text-sm font-medium text-blue-700 text-[#2fa7f7]">89%</span>
+            </div>
+            <div class="bg-gray-200 rounded-full h-2.5 bg-gray-300">
+              <div class="rounded-full h-2.5 bg-[#eaeaea]">
+                <div
+                  class="bg-[#2fa7f7] h-2.5 rounded-full style-background duration-500 w-0"
+                  data-set="89%"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="progress w-full sm:w-full md:w-2/5 lg-w-2/5 my-2">
+            <div class="flex justify-between mb-1">
+              <span class="text-base font-medium text-blue-700 text-[#2fa7f7]"
+                >Medical LAb</span
+              >
+              <span class="text-sm font-medium text-blue-700 text-[#2fa7f7]">69%</span>
+            </div>
+            <div class="bg-gray-200 rounded-full h-2.5 bg-gray-300">
+              <div class="rounded-full h-2.5 bg-[#eaeaea]">
+                <div
+                  class="bg-[#2fa7f7] h-2.5 rounded-full style-background duration-500 w-0"
+                  data-set="69%"
+                ></div>
+              </div>
+            </div>
+            </div>
+            <div class="progress w-full sm:w-full md:w-2/5 lg-w-2/5 my-2">
+              <div class="flex justify-between mb-1">
+                <span class="text-base font-medium text-blue-700 text-[#2fa7f7]"
+                  >Solution</span
+                >
+                <span class="text-sm font-medium text-blue-700 text-[#2fa7f7]">80%</span>
+              </div>
+              <div class="bg-gray-200 rounded-full h-2.5 bg-gray-300">
+                <div class="rounded-full h-2.5 bg-[#eaeaea]">
+                  <div
+                    class="bg-[#2fa7f7] h-2.5 rounded-full style-background duration-500 w-0"
+                    data-set="80%"
+                  ></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
+      <section class="other-doctors max-w-5xl mx-auto my-11">
+        <div class="title text-center my-10">
+          <h4 class="flex items-center mx-auto w-fit relative text-[#2fa7f7]">
+            <i class="fa-solid fa-minus rotate-90 absolute -left-1.5"></i>
+            <i class="fa-solid fa-minus fa-2x me-3"></i> our team members
+            <i class="fa-solid fa-minus fa-2x ms-3"></i>
+            <i class="fa-solid fa-minus rotate-90 absolute -right-1.5"></i>
+          </h4>
+          <h1 class="text-3xl w-96 mx-auto">
+            Meet Our Specialist This Doctor Meeting
+          </h1>
+        </div>
+        <div class="swiper mySwiper h-[450px]">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="card group relative overflow-hidden cursor-pointer">
+                <div
+                  class="data-doctor absolute top-[-100%] p-4 transition-all duration-500 ease-in-out group-hover:top-0 bg-[#2fa7f729] h-full"
+                >
+                  <h2 class="text-xl my-1 text-[#013f68]">Rawan Selima</h2>
+                  <h6 class="text-sm mb-1 text-[#013f68]">
+                    Specialist in Cardiology
+                  </h6>
+                  <p class="font-normal text-[#013f68]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Distinctio quasi voluptatibus odio similique deserunt
+                    debitis nihil dolor mollitia nobis ullam, dolorem ad,
+                  </p>
+                  <a href="./doctor-details.html">
+                    <button
+                      type="button"
+                      class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 bg-[#013f68] duration-300 hover:bg-[#0b2332]"
+                    >
+                      More Details
+                    </button>
+                  </a>
+                </div>
+                <img
+                  class="h-96 w-full rounded-lg"
+                  src="../assets/images/doctors/doctor-7.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card group relative overflow-hidden cursor-pointer">
+                <div
+                  class="data-doctor absolute top-[-100%] p-4 transition-all duration-500 ease-in-out group-hover:top-0 bg-[#2fa7f729] h-full"
+                >
+                  <h2 class="text-xl my-1 text-[#013f68]">Rawan Selima</h2>
+                  <h6 class="text-sm mb-1 text-[#013f68]">
+                    Specialist in Cardiology
+                  </h6>
+                  <p class="font-normal text-[#013f68]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Distinctio quasi voluptatibus odio similique deserunt
+                    debitis nihil dolor mollitia nobis ullam, dolorem ad,
+                  </p>
+                  <a href="./doctor-details.html">
+                    <button
+                      type="button"
+                      class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 bg-[#013f68] duration-300 hover:bg-[#0b2332]"
+                    >
+                      More Details
+                    </button>
+                  </a>
+                </div>
+                <img
+                  class="h-96 w-full rounded-lg"
+                  src="../assets/images/doctors/doctor-5.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card group relative overflow-hidden cursor-pointer">
+                <div
+                  class="data-doctor absolute top-[-100%] p-4 transition-all duration-500 ease-in-out group-hover:top-0 bg-[#2fa7f729] h-full"
+                >
+                  <h2 class="text-xl my-1 text-[#013f68]">Rawan Selima</h2>
+                  <h6 class="text-sm mb-1 text-[#013f68]">
+                    Specialist in Cardiology
+                  </h6>
+                  <p class="font-normal text-[#013f68]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Distinctio quasi voluptatibus odio similique deserunt
+                    debitis nihil dolor mollitia nobis ullam, dolorem ad,
+                  </p>
+                  <a href="./doctor-details.html">
+                    <button
+                      type="button"
+                      class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 bg-[#013f68] duration-300 hover:bg-[#0b2332]"
+                    >
+                      More Details
+                    </button>
+                  </a>
+                </div>
+                <img
+                  class="h-96 w-full rounded-lg"
+                  src="../assets/images/doctors/doctor-8.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card group relative overflow-hidden cursor-pointer">
+                <div
+                  class="data-doctor absolute top-[-100%] p-4 transition-all duration-500 ease-in-out group-hover:top-0 bg-[#2fa7f729] h-full"
+                >
+                  <h2 class="text-xl my-1 text-[#013f68]">Rawan Selima</h2>
+                  <h6 class="text-sm mb-1 text-[#013f68]">
+                    Specialist in Cardiology
+                  </h6>
+                  <p class="font-normal text-[#013f68]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Distinctio quasi voluptatibus odio similique deserunt
+                    debitis nihil dolor mollitia nobis ullam, dolorem ad,
+                  </p>
+                  <a href="./doctor-details.html">
+                    <button
+                      type="button"
+                      class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 bg-[#013f68] duration-300 hover:bg-[#0b2332]"
+                    >
+                      More Details
+                    </button>
+                  </a>
+                </div>
+                <img
+                  class="h-96 w-full rounded-lg"
+                  src="../assets/images/doctors/doctor-6.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card group relative overflow-hidden cursor-pointer">
+                <div
+                  class="data-doctor absolute top-[-100%] p-4 transition-all duration-500 ease-in-out group-hover:top-0 bg-[#2fa7f729] h-full"
+                >
+                  <h2 class="text-xl my-1 text-[#013f68]">Rawan Selima</h2>
+                  <h6 class="text-sm mb-1 text-[#013f68]">
+                    Specialist in Cardiology
+                  </h6>
+                  <p class="font-normal text-[#013f68]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Distinctio quasi voluptatibus odio similique deserunt
+                    debitis nihil dolor mollitia nobis ullam, dolorem ad,
+                  </p>
+                  <a href="./doctor-details.html">
+                    <button
+                      type="button"
+                      class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 bg-[#013f68] duration-300 hover:bg-[#0b2332]"
+                    >
+                      More Details
+                    </button>
+                  </a>
+                </div>
+                <img
+                  class="h-96 w-full rounded-lg"
+                  src="../assets/images/doctors/doctor-1.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card group relative overflow-hidden cursor-pointer">
+                <div
+                  class="data-doctor absolute top-[-100%] p-4 transition-all duration-500 ease-in-out group-hover:top-0 bg-[#2fa7f729] h-full"
+                >
+                  <h2 class="text-xl my-1 text-[#013f68]">Rawan Selima</h2>
+                  <h6 class="text-sm mb-1 text-[#013f68]">
+                    Specialist in Cardiology
+                  </h6>
+                  <p class="font-normal text-[#013f68]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Distinctio quasi voluptatibus odio similique deserunt
+                    debitis nihil dolor mollitia nobis ullam, dolorem ad,
+                  </p>
+                  <a href="./doctor-details.html">
+                    <button
+                      type="button"
+                      class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 bg-[#013f68] duration-300 hover:bg-[#0b2332]"
+                    >
+                      More Details
+                    </button>
+                  </a>
+                </div>
+                <img
+                  class="h-96 w-full rounded-lg"
+                  src="../assets/images/doctors/doctor-2.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card group relative overflow-hidden cursor-pointer">
+                <div
+                  class="data-doctor absolute top-[-100%] p-4 transition-all duration-500 ease-in-out group-hover:top-0 bg-[#2fa7f729] h-full"
+                >
+                  <h2 class="text-xl my-1 text-[#013f68]">Rawan Selima</h2>
+                  <h6 class="text-sm mb-1 text-[#013f68]">
+                    Specialist in Cardiology
+                  </h6>
+                  <p class="font-normal text-[#013f68]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Distinctio quasi voluptatibus odio similique deserunt
+                    debitis nihil dolor mollitia nobis ullam, dolorem ad,
+                  </p>
+                  <a href="./doctor-details.html">
+                    <button
+                      type="button"
+                      class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 bg-[#013f68] duration-300 hover:bg-[#0b2332]"
+                    >
+                      More Details
+                    </button>
+                  </a>
+                </div>
+                <img
+                  class="h-96 w-full rounded-lg"
+                  src="../assets/images/doctors/doctor-3.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="card group relative overflow-hidden cursor-pointer">
+                <div
+                  class="data-doctor absolute top-[-100%] p-4 transition-all duration-500 ease-in-out group-hover:top-0 bg-[#2fa7f729] h-full"
+                >
+                  <h2 class="text-xl my-1 text-[#013f68]">Rawan Selima</h2>
+                  <h6 class="text-sm mb-1 text-[#013f68]">
+                    Specialist in Cardiology
+                  </h6>
+                  <p class="font-normal text-[#013f68]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Distinctio quasi voluptatibus odio similique deserunt
+                    debitis nihil dolor mollitia nobis ullam, dolorem ad,
+                  </p>
+                  <a href="./doctor-details.html">
+                    <button
+                      type="button"
+                      class="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 bg-[#013f68] duration-300 hover:bg-[#0b2332]"
+                    >
+                      More Details
+                    </button>
+                  </a>
+                </div>
+                <img
+                  class="h-96 w-full rounded-lg"
+                  src="../assets/images/doctors/doctor-4.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+    </main>
 
-        <!-- Recent Posts Section -->
-        <div class="w-full md:w-auto">
-          <h2 class="text-xl font-bold pb-4">Recent Posts</h2>
+    <footer
+      class="relative min-h-[23rem]"
+      style="
+        background-image: url('../assets/images/footer.jpg');
+        background-size: cover;
+      "
+    >
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div
+        class="relative w-full h-full flex flex-col lg:flex-row justify-around items-center gap-6 text-white lg:px-20 py-8"
+      >
+        <!-- Logo & Info Section -->
+        <section
+          class="w-[90%] lg:w-[20rem] flex flex-col gap-8 lg:bg-accent p-5"
+        >
+          <a href="/">
+            <img
+              src="../assets/svgs/logo-white.svg"
+              alt="Hospitium Logo"
+              class="w-[80%]"
+            />
+          </a>
+          <hr />
           <div class="space-y-4">
-            <article class="flex items-start gap-3">
-              <img src="../assets/images/posts/post-1.png" alt="Post 1" class="w-24 h-20 object-cover rounded-lg">
+            <div class="flex items-start gap-3">
+              <i class="fas fa-clock"></i>
               <div>
-                <p class="text-sm">23 Jun 2024</p>
-                <h3 class="font-semibold">We Round Solution - York Blog</h3>
+                <p>Open Hours:</p>
+                <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
               </div>
-            </article>
-            <article class="flex items-start gap-3">
-              <img src="../assets/images/posts/post-2.png" alt="Post 2" class="w-24 h-20 object-cover rounded-lg">
-              <div>
-                <p class="text-sm">20 Jun 2024</p>
-                <h3 class="font-semibold">The Medical Of This - Working Health</h3>
-              </div>
-            </article>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-location-dot"></i>
+              <p>13/A, Miranda Halim City.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i class="fas fa-phone"></i>
+              <p>099 695 695 3</p>
+            </div>
+            <div class="flex gap-3">
+              <a
+                href="#"
+                aria-label="Facebook"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full"
+              >
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a
+                href="#"
+                aria-label="GitHub"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="#"
+                aria-label="Twitter"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
-    </div>
-  </footer>
+        </section>
 
+        <!-- Links Section -->
+        <section
+          class="w-[90%] lg:w-[70%] justify-around flex flex-col md:flex-row gap-16 p-5"
+        >
+          <div class="w-full md:w-[50%] flex justify-between">
+            <div>
+              <h2 class="text-xl font-bold pb-4">Service</h2>
+              <ul class="space-y-2">
+                <li><a href="#">Why Choose Us</a></li>
+                <li><a href="#">Our Solutions</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Core Values</a></li>
+                <li><a href="#">Our Projects</a></li>
+              </ul>
+            </div>
+            <div>
+              <h2 class="text-xl font-bold pb-4">Quick Links</h2>
+              <ul class="space-y-2">
+                <li><a href="#">Residents</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Online Service</a></li>
+                <li><a href="#">Visiting</a></li>
+                <li><a href="#">Employment</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Recent Posts Section -->
+          <div class="w-full md:w-auto">
+            <h2 class="text-xl font-bold pb-4">Recent Posts</h2>
+            <div class="space-y-4">
+              <article class="flex items-start gap-3">
+                <img
+                  src="../assets/images/posts/post-1.png"
+                  alt="Post 1"
+                  class="w-24 h-20 object-cover rounded-lg"
+                />
+                <div>
+                  <p class="text-sm">23 Jun 2024</p>
+                  <h3 class="font-semibold">We Round Solution - York Blog</h3>
+                </div>
+              </article>
+              <article class="flex items-start gap-3">
+                <img
+                  src="../assets/images/posts/post-2.png"
+                  alt="Post 2"
+                  class="w-24 h-20 object-cover rounded-lg"
+                />
+                <div>
+                  <p class="text-sm">20 Jun 2024</p>
+                  <h3 class="font-semibold">
+                    The Medical Of This - Working Health
+                  </h3>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="../scripts/detaildoctor.js"></script>
+  </body>
 </html>
