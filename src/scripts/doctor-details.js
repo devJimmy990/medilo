@@ -1,4 +1,4 @@
-onload = () => {
+addEventListener("load", () => {
   let progress = document.querySelectorAll(".progress .style-background");
   let progress_container = document.querySelector(".progress-container");
 
@@ -33,4 +33,4 @@ onload = () => {
     },
   });
 
-}
+});
