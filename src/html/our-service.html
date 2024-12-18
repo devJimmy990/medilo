@@ -1,378 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>our service</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../style/output.css" />
-  </head>
-  <body>
-    <!-- Start header -->
-    <header class="h-[30rem] relative align-middle">
-      <img
-        src="../assets/images/banner.jpg"
-        alt="Banner"
-        class="w-full h-full absolute z-0"
-      />
-      <nav
-        class="flex justify-between absolute top-0 start-0 end-0 z-1 px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-4"
-      >
-        <img src="../assets/svgs/logo.svg" alt="Hospitium" />
 
-        <div class="hidden md:flex items-center gap-5 lg:gap-8">
-          <ul class="flex gap-4 lg:gap-8">
-            <a href="#">
-              <li class="font-semibold hover:text-accent">Home</li>
-            </a>
-            <a href="#">
-              <li class="font-semibold hover:text-accent">About</li>
-            </a>
-            <a href="#">
-              <li class="font-semibold hover:text-accent">Services</li>
-            </a>
-            <a href="#">
-              <li class="font-semibold hover:text-accent">Blog</li>
-            </a>
-            <a href="#">
-              <li class="font-semibold hover:text-accent">Contact</li>
-            </a>
-          </ul>
-          <div
-            class="flex items-center justify-center border border-1 rounded-[50%] w-7 h-7"
-          >
-            <i class="fas fa-magnifying-glass fa-sm"></i>
-          </div>
-          <div class="hidden lg:flex">
-            <button
-              class="hidden lg:flex items-center justify-center gap-2 font-bold text-white rounded-3xl px-5 py-2 bg-accent"
-              aria-label="Contact Now"
-            >
-              Contact Now
-              <div>
-                <i class="fas fa-angles-right fa-xs"></i>
-              </div>
-            </button>
-          </div>
-          <div class="lg:hidden">
-            <button
-              class="lg:hidden items-center justify-center text-white rounded-3xl px-5 py-2 bg-accent"
-              aria-label="Contact Now"
-            >
-              <div>
-                <i class="fas fa-headset lg:hidden" aria-hidden="true"></i>
-              </div>
-            </button>
-          </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Discover a comprehensive range of medical services offered by our hospital, designed to meet the healthcare needs of every patient." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="icon" href="../assets/images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style/output.css" />
+  <script src="../scripts/main.js"></script>
+  <title>Medilo</title>
+</head>
+
+<body>
+  <header class="relative h-[30rem]">
+    <img src="../assets/images/banner.jpg" alt="Beautiful hospital banner"
+      class="w-full h-full absolute z-0 object-cover">
+    <nav class="container mx-auto flex justify-between items-center absolute z-[1] px-8 xl:px-32 py-4">
+      <div class="w-full lg:w-[10rem] flex items-center justify-between ">
+        <a href="index.html" class="w-auto flex justify-start items-center gap-2 border-0 outline-0">
+          <img class="w-12 md:w-16" src="../assets/images/logo.png" alt="Medilo Logo">
+          <h4 class="text-2xl font-[900]">Medilo</h4>
+        </a>
+        <div id="menu" class="md:hidden flex items-center justify-center cursor-pointer">
+          <i class="fas fa-bars fa-xl"></i>
         </div>
-      </nav>
-      <div class="flex flex-col gap-3 absolute top-[40%] start-[15%] z-2">
-        <h3 class="text-5xl font-bold">our Service</h3>
-        <!-- Edit Current Page Name-->
-        <p>
-          <a href="/index.html">Home</a> /
-          <span class="text-accent">Service</span
-          ><!-- Edit Current Page Path-->
+
+      </div>
+
+      <div class="hidden md:flex items-center gap-5 lg:gap-8">
+        <ul class="flex gap-4 lg:gap-8" role="menu">
+          <li>
+            <a href="index.html" class="font-semibold hover:text-accent" role="menuitem">Home</a>
+          </li>
+          <li>
+            <a href="about.html" class="font-semibold hover:text-accent" role="menuitem">About</a>
+          </li>
+          <li>
+            <a href="our-service.html" class="font-semibold hover:text-accent" role="menuitem">Services</a>
+          </li>
+          <li>
+            <a href="blogs.html" class="font-semibold hover:text-accent" role="menuitem">Blog</a>
+          </li>
+          <li>
+            <a href="contact-us.html" class="font-semibold hover:text-accent" role="menuitem">Contact</a>
+          </li>
+        </ul>
+        <button class="flex items-center justify-center border rounded-full w-7 h-7" aria-label="Search">
+          <i class="fas fa-search fa-sm"></i>
+        </button>
+        <button
+          class="main-book-appointment hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
+          aria-label="Book Now">
+          Book Now
+          <div><i class="fas fa-angles-right fa-xs"></i></div>
+        </button>
+        <button
+          class="main-book-appointment lg:hidden flex items-center justify-center px-5 py-2 bg-accent text-white rounded-3xl"
+          aria-label="Book Now">
+          <i class="fas fa-headset"></i>
+        </button>
+      </div>
+    </nav>
+    <div id="modal"
+      class="w-[75%] md:w-[50%] h-screen lg:hidden hidden flex-col justify-between absolute top-0 end-0 z-[1000] p-4 text-white  bg-[#223361]">
+      <div class="w-full flex flex-col">
+        <div id="close" class="w-7 h-7 flex justify-center items-center self-end cursor-pointer">
+          <i class="fa-solid fa-xmark fa-xl"></i>
+        </div>
+        <ul class="flex flex-col gap-4 lg:gap-8" role="menu">
+          <li class="font-semibold hover:text-accent">
+            <a href="index.html" role="menuitem">Home</a>
+          </li>
+          <li class="font-semibold hover:text-accent">
+            <a href="about.html" role="menuitem">About</a>
+          </li>
+          <li class="font-semibold hover:text-accent">
+            <a href="our-service.html" role="menuitem">Services</a>
+          </li>
+          <li class="font-semibold hover:text-accent">
+            <a href="blogs.html" role="menuitem">Blog</a>
+          </li>
+          <li class="font-semibold hover:text-accent">
+            <a href="contact-us.html" role="menuitem">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <button
+        class="main-book-appointment flex  justify-center items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
+        aria-label="Book Now">
+        Book Now
+        <div><i class="fas fa-angles-right fa-xs"></i></div>
+      </button>
+    </div>
+    <div class="hidden lg:flex flex-col gap-2 absolute top-[40%] left-[15%] z-10">
+      <h1 class="text-5xl font-bold ">Our Services</h1>
+      <p class="">
+        <a href="index.html" class="hover:text-accent">Home</a> /
+        <span class="text-accent">Our Services</span>
+      </p>
+    </div>
+  </header>
+  <!-- End header -->
+
+  <main class="px-2 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-4">
+    <!-- Start OUR BEST SERVICE -->
+    <div class="flex justify-center md:justify-start items-center md:mt-[100px] mb-4">
+      <span class="h-[12px] w-[3px] bg-accent block"></span>
+      <span class="w-[15px] h-[4px] bg-accent mr-2"></span>
+      <span class="text-accent font-bold text-[14px]">OUR BEST SERVICE</span>
+    </div>
+    <!-- End OUR BEST SERVICE -->
+    <!-- Start High-Quality Services This Doctor -->
+    <section class="flex-col items-center flex md:flex-row md:justify-between md:items-center md:mb-10">
+      <div class="">
+        <p class="font-bold text-sm mb-4 md:text-4xl md:w-[400px] break-words">
+          High-Quality Services This Doctor
         </p>
       </div>
-    </header>
-    <!-- End header -->
-    <main class="px-2 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-4">
-      <!-- Start OUR BEST SERVICE -->
-      <div
-        class="flex justify-center md:justify-start items-center md:mt-[100px] mb-4"
-      >
-        <span class="h-[12px] w-[3px] bg-accent block"></span>
-        <span class="w-[15px] h-[4px] bg-accent mr-2"></span>
-        <span class="text-accent font-bold text-[14px]">OUR BEST SERVICE</span>
+      <div class="text-body text-center md:text-start md:w-[450px] text-[14px] mb-4">
+        We are privileged to work with hundreds of future-thinking medial,
+        including many of the world's top hardware, software, and brands, feel
+        safe and comfortable in establishing.
       </div>
-      <!-- End OUR BEST SERVICE -->
-      <!-- Start High-Quality Services This Doctor -->
-      <section
-        class="flex-col items-center flex md:flex-row md:justify-between md:items-center md:mb-10"
-      >
-        <div class="">
-          <p
-            class="font-bold text-sm mb-4 md:text-4xl md:w-[400px] break-words"
-          >
-            High-Quality Services This Doctor
-          </p>
-        </div>
+    </section>
+    <!-- End High-Quality Services This Doctor -->
+    <!-- Start Services-Boxes -->
+    <section class="flex-col sm:flex-row flex flex-wrap gap-5">
+      <div class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]">
         <div
-          class="text-body text-center md:text-start md:w-[450px] text-[14px] mb-4"
-        >
-          We are privileged to work with hundreds of future-thinking medial,
-          including many of the world's top hardware, software, and brands, feel
-          safe and comfortable in establishing.
+          class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]">
+          <i class="fa-solid fa-briefcase-medical bg-blue text-white p-3 rounded-full"></i>
         </div>
-      </section>
-      <!-- End High-Quality Services This Doctor -->
-      <!-- Start Services-Boxes -->
-      <section class="flex-col sm:flex-row flex flex-wrap gap-5">
-        <div
-          class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]"
-        >
-          <div
-            class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]"
-          >
-            <i
-              class="fa-solid fa-briefcase-medical bg-blue text-white p-3 rounded-full"
-            ></i>
-          </div>
-          <p class="font-bold text-xl mb-1">Pharmacology</p>
-          <p class="text-[14px]">
-            Medical competitor research startup to financial
-          </p>
-        </div>
-        <div
-          class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]"
-        >
-          <div
-            class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]"
-          >
-            <i
-              class="fa-solid fa-truck-medical fa-flip-horizontal bg-blue text-white p-3 rounded-full"
-            ></i>
-          </div>
-          <p class="font-bold text-xl mb-1">Orthopedic</p>
-          <p class="text-[14px]">
-            Medical competitor research startup to financial
-          </p>
-        </div>
-        <div
-          class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]"
-        >
-          <div
-            class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]"
-          >
-            <i
-              class="fa-solid fa-heart-pulse bg-blue text-white p-3 rounded-full"
-            ></i>
-          </div>
-          <p class="font-bold text-xl mb-1">Hematology</p>
-          <p class="text-[14px]">
-            Medical competitor research startup to financial
-          </p>
-        </div>
-        <div
-          class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]"
-        >
-          <div
-            class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]"
-          >
-            <i
-              class="fa-solid fa-user-nurse bg-blue text-white p-3 rounded-full"
-            ></i>
-          </div>
-          <p class="font-bold text-xl mb-1">Plastic Surgery</p>
-          <p class="text-[14px]">
-            Medical competitor research startup to financial
-          </p>
-        </div>
-        <div
-          class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]"
-        >
-          <div
-            class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]"
-          >
-            <i
-              class="fa-solid fa-brain bg-blue text-white p-3 rounded-full"
-            ></i>
-          </div>
-          <p class="font-bold text-xl mb-1">Neurology</p>
-          <p class="text-[14px]">
-            Medical competitor research startup to financial
-          </p>
-        </div>
-        <div
-          class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]"
-        >
-          <div
-            class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]"
-          >
-            <i
-              class="fa-solid fa-x-ray bg-blue text-white p-3 rounded-full"
-            ></i>
-          </div>
-          <p class="font-bold text-xl mb-1">Ophthalmology</p>
-          <p class="text-[14px]">
-            Medical competitor research startup to financial
-          </p>
-        </div>
-        <div
-          class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]"
-        >
-          <div
-            class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]"
-          >
-            <i
-              class="fa-solid fa-user-nurse bg-blue text-white p-3 rounded-full"
-            ></i>
-          </div>
-          <p class="font-bold text-xl mb-1">Dental Care</p>
-          <p>Medical competitor research startup to financial</p>
-        </div>
-        <div
-          class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]"
-        >
-          <div
-            class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]"
-          >
-            <i
-              class="fa-solid fa-droplet bg-blue text-white p-3 rounded-full"
-            ></i>
-          </div>
-          <p class="font-bold text-xl mb-1">Service & Check</p>
-          <p class="text-[14px]">
-            Medical competitor research startup to financial
-          </p>
-        </div>
-      </section>
-      <!-- End Services-Boxes -->
-      <!-- Start Delivering Tomorrow's Health Care -->
-      <section class="flex flex-col items-center mt-10 font-bold">
-        <p>
-          <i class="fa-solid fa-print text-accent"></i> Delivering tomorrow's
-          health care for your family.
+        <p class="font-bold text-xl mb-1">Pharmacology</p>
+        <p class="text-[14px]">
+          Medical competitor research startup to financial
         </p>
-        <p>medical this View <a href="#" class="text-accent">SEE MORE >></a></p>
-      </section>
-      <!-- End Delivering Tomorrow's Health Care -->
-    </main>
-    <footer
-      class="relative min-h-[23rem]"
-      style="
-        background-image: url('../assets/images/footer.jpg');
-        background-size: cover;
-      "
-    >
-      <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+      <div class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]">
+        <div
+          class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]">
+          <i class="fa-solid fa-truck-medical fa-flip-horizontal bg-blue text-white p-3 rounded-full"></i>
+        </div>
+        <p class="font-bold text-xl mb-1">Orthopedic</p>
+        <p class="text-[14px]">
+          Medical competitor research startup to financial
+        </p>
+      </div>
+      <div class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]">
+        <div
+          class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]">
+          <i class="fa-solid fa-heart-pulse bg-blue text-white p-3 rounded-full"></i>
+        </div>
+        <p class="font-bold text-xl mb-1">Hematology</p>
+        <p class="text-[14px]">
+          Medical competitor research startup to financial
+        </p>
+      </div>
+      <div class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]">
+        <div
+          class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]">
+          <i class="fa-solid fa-user-nurse bg-blue text-white p-3 rounded-full"></i>
+        </div>
+        <p class="font-bold text-xl mb-1">Plastic Surgery</p>
+        <p class="text-[14px]">
+          Medical competitor research startup to financial
+        </p>
+      </div>
+      <div class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]">
+        <div
+          class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]">
+          <i class="fa-solid fa-brain bg-blue text-white p-3 rounded-full"></i>
+        </div>
+        <p class="font-bold text-xl mb-1">Neurology</p>
+        <p class="text-[14px]">
+          Medical competitor research startup to financial
+        </p>
+      </div>
+      <div class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]">
+        <div
+          class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]">
+          <i class="fa-solid fa-x-ray bg-blue text-white p-3 rounded-full"></i>
+        </div>
+        <p class="font-bold text-xl mb-1">Ophthalmology</p>
+        <p class="text-[14px]">
+          Medical competitor research startup to financial
+        </p>
+      </div>
+      <div class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]">
+        <div
+          class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]">
+          <i class="fa-solid fa-user-nurse bg-blue text-white p-3 rounded-full"></i>
+        </div>
+        <p class="font-bold text-xl mb-1">Dental Care</p>
+        <p>Medical competitor research startup to financial</p>
+      </div>
+      <div class="rounded-xl md:h-[100%] text-center md:text-start bg-gray p-6 w-[100%] sm:w-[calc(100%_/_4_-_15px)]">
+        <div
+          class="md:z-[5] md:w-fit md:relative md:before:content-[''] md:before:absolute md:before:w-0 md:before:h-0 md:before:border-t-[10px] md:before:border-b-[10px] md:before:border-b-transparent md:before:border-l-[15px] md:before:border-t-transparent md:before:border-b-transparentm md:before:border-l-accent md:before:top-1/2 md:before:transform md:before:-translate-y-1/2 md:before:-right-[9px] md:before:z-[-1]">
+          <i class="fa-solid fa-droplet bg-blue text-white p-3 rounded-full"></i>
+        </div>
+        <p class="font-bold text-xl mb-1">Service & Check</p>
+        <p class="text-[14px]">
+          Medical competitor research startup to financial
+        </p>
+      </div>
+    </section>
+    <!-- End Services-Boxes -->
+    <!-- Start Delivering Tomorrow's Health Care -->
+    <section class="flex flex-col items-center mt-10 font-bold">
+      <p>
+        <i class="fa-solid fa-print text-accent"></i> Delivering tomorrow's
+        health care for your family.
+      </p>
+      <p>medical this View <a href="#" class="text-accent">SEE MORE >></a></p>
+    </section>
+    <!-- End Delivering Tomorrow's Health Care -->
+  </main>
+
+  <footer class="w-full flex flex-col">
+    <section class="w-full flex justify-center relative bg-[#273764]">
+      <div class="w-full h-full hidden md:block absolute inset-0">
+        <img src="../assets/images/footer.jpg" alt="Footer Image" class="w-full h-full object-cover">
+      </div>
+      <div class="w-full h-full md:hidden absolute bg-[#273764]"></div>
       <div
-        class="relative w-full h-full flex flex-col lg:flex-row justify-around items-center gap-6 text-white lg:px-20 py-8"
-      >
-        <!-- Logo & Info Section -->
-        <section
-          class="w-[90%] lg:w-[20rem] flex flex-col gap-8 lg:bg-accent p-5"
-        >
-          <a href="/">
-            <img
-              src="../assets/svgs/logo-white.svg"
-              alt="Hospitium Logo"
-              class="w-[80%]"
-            />
+        class="container mx-auto flex flex-col lg:flex-row justify-around items-start lg:items-center gap-8 px-5 py-4 lg:py-0 relative z-10 text-white">
+
+        <section class="w-full lg:w-[30%] h-full flex flex-col gap-8 p-4 lg:bg-accent">
+          <a href="index.html" class="w-auto flex justify-start items-center gap-2 border-0 outline-0">
+            <img class="w-16" src="../assets/images/logo.png" alt="Medilo Logo">
+            <h4 class="text-3xl md:text-2xl font-[900]">Medilo</h4>
           </a>
-          <hr />
-          <div class="space-y-4">
+          <hr class="hidden lg:block border-white">
+          <div class="space-y-6">
             <div class="flex items-start gap-3">
-              <i class="fas fa-clock"></i>
+              <div><i class="fas fa-clock"></i></div>
               <div>
-                <p>Open Hours:</p>
+                <p class="font-semibold">Open Hours:</p>
                 <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
               </div>
             </div>
             <div class="flex items-start gap-3">
-              <i class="fas fa-location-dot"></i>
+              <div> <i class="fas fa-location-dot"></i></div>
               <p>13/A, Miranda Halim City.</p>
             </div>
             <div class="flex items-start gap-3">
-              <i class="fas fa-phone"></i>
+              <div> <i class="fas fa-phone"></i></div>
               <p>099 695 695 3</p>
             </div>
-            <div class="flex gap-3">
-              <a
-                href="#"
-                aria-label="Facebook"
-                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full"
-              >
+            <div class="flex justify-end md:justify-start gap-3">
+              <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a
-                href="#"
-                aria-label="LinkedIn"
-                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full"
-              >
+              <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a
-                href="#"
-                aria-label="GitHub"
-                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full"
-              >
+              <a href="https://www.github.com" target="_blank" aria-label="GitHub"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
                 <i class="fab fa-github"></i>
               </a>
-              <a
-                href="#"
-                aria-label="Twitter"
-                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full"
-              >
+              <a href="https://x.com" target="_blank" aria-label="Twitter"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
                 <i class="fab fa-twitter"></i>
               </a>
             </div>
           </div>
         </section>
 
-        <!-- Links Section -->
-        <section
-          class="w-[90%] lg:w-[70%] justify-around flex flex-col md:flex-row gap-16 p-5"
-        >
-          <div class="w-full md:w-[50%] flex justify-between">
-            <div>
-              <h2 class="text-xl font-bold pb-4">Service</h2>
-              <ul class="space-y-2">
-                <li><a href="#">Why Choose Us</a></li>
-                <li><a href="#">Our Solutions</a></li>
-                <li><a href="#">Partners</a></li>
-                <li><a href="#">Core Values</a></li>
-                <li><a href="#">Our Projects</a></li>
-              </ul>
-            </div>
-            <div>
-              <h2 class="text-xl font-bold pb-4">Quick Links</h2>
-              <ul class="space-y-2">
-                <li><a href="#">Residents</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Online Service</a></li>
-                <li><a href="#">Visiting</a></li>
-                <li><a href="#">Employment</a></li>
-              </ul>
-            </div>
+        <section class="w-full lg:w-[70%] flex flex-wrap lg:flex-nowrap justify-between lg:justify-around gap-8 ">
+          <div>
+            <h2 class="text-xl font-bold pb-4">Service</h2>
+            <ul class="space-y-2">
+              <li>Why Choose Us</li>
+              <li>Our Solutions</li>
+              <li>Partners</li>
+              <li>Core Values</li>
+              <li>Our Projects</li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold pb-4">Quick Links</h2>
+            <ul class="space-y-2">
+              <li>Residents</li>
+              <li>Business</li>
+              <li>Online Service</li>
+              <li>Visiting</li>
+              <li>Employment</li>
+            </ul>
           </div>
 
-          <!-- Recent Posts Section -->
-          <div class="w-full md:w-auto">
+          <div>
             <h2 class="text-xl font-bold pb-4">Recent Posts</h2>
             <div class="space-y-4">
               <article class="flex items-start gap-3">
-                <img
-                  src="../assets/imagesposts/post-1.png"
-                  alt="Post 1"
-                  class="w-24 h-20 object-cover rounded-lg"
-                />
+                <img src="../assets/images/posts/post-0.png" alt="Post" class="w-24 h-20 object-cover rounded-lg">
                 <div>
                   <p class="text-sm">23 Jun 2024</p>
                   <h3 class="font-semibold">We Round Solution - York Blog</h3>
                 </div>
               </article>
               <article class="flex items-start gap-3">
-                <img
-                  src="../assets/imagesposts/post-2.png"
-                  alt="Post 2"
-                  class="w-24 h-20 object-cover rounded-lg"
-                />
+                <img src="../assets/images/posts/post-1.png" alt="Post" class="w-24 h-20 object-cover rounded-lg">
                 <div>
                   <p class="text-sm">20 Jun 2024</p>
-                  <h3 class="font-semibold">
-                    The Medical Of This - Working Health
-                  </h3>
+                  <h3 class="font-semibold">The Medical Of This - Working Health</h3>
                 </div>
               </article>
             </div>
           </div>
         </section>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <section class="w-full relative py-4 text-white bg-[#1d2c4d]">
+      <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm">Copyright &copy; 2024 Medilo, All Rights Reserved</p>
+        <ul class="flex justify-center items-center gap-4 text-sm">
+          <li>About us</li>
+          <li>Events</li>
+          <li>News</li>
+          <li>Services</li>
+        </ul>
+      </div>
+      <button id="back-top" type="button"
+        class="w-10 aspect-square flex items-center justify-center rounded-full absolute bottom-16 end-4 md:bottom-8 md:end-2 cursor-pointer text-accent bg-white">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </section>
+  </footer>
+</body>
+
 </html>
