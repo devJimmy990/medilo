@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Easily schedule an appointment with our experienced doctors at your convenience, with options for the earliest available slots." />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="../assets/images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../style/output.css">
-    <script src="../scripts/nav.js"></script>
+    <script src="../scripts/main.js"></script>
     <title>Medilo</title>
 </head>
 
@@ -14,69 +17,76 @@
     <header class="relative h-[30rem]">
         <img src="../assets/images/banner.jpg" alt="Beautiful hospital banner"
             class="w-full h-full absolute z-0 object-cover">
-        <nav
-            class="flex justify-between items-center px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-4 absolute top-0 w-full z-10">
+        <nav class="container mx-auto flex justify-between items-center absolute z-[1] px-8 xl:px-32 py-4">
             <div class="w-full lg:w-[10rem] flex items-center justify-between ">
-                <a href="/" class="max-w-[8rem] lg:w-[120rem]">
-                    <img class="w-full" src="../assets/svgs/logo.svg" alt="Hospitium Logo">
+                <a href="index.html" class="w-auto flex justify-start items-center gap-2 border-0 outline-0">
+                    <img class="w-12 md:w-16" src="../assets/images/logo.png" alt="Medilo Logo">
+                    <h4 class="text-2xl font-[900]">Medilo</h4>
                 </a>
-                <div id="menu" class="md:hidden flex items-center justify-center">
-                    <i class="fas fa-bars fa-lg"></i>
+                <div id="menu" class="md:hidden flex items-center justify-center cursor-pointer">
+                    <i class="fas fa-bars fa-xl"></i>
                 </div>
-                <div id="modal"
-                    class="w-[75%] md:w-[50%] h-screen lg:hidden hidden flex-col justify-between absolute top-0 end-0 z-40 p-4 text-white  bg-[#223361]">
-                    <div class="w-full flex flex-col">
-                        <div id="close" class="w-7 h-7 flex justify-center items-center self-end">
-                            <i class="fa-solid fa-xmark fa-xl"></i>
-                        </div>
-                        <ul class="flex flex-col gap-4 lg:gap-8" role="menu">
-                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Home</a></li>
-                            <li><a href="#" class="font-semibold text-lg" role="menuitem">About</a></li>
-                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Services</a></li>
-                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Blog</a></li>
-                            <li><a href="#" class="font-semibold text-lg" role="menuitem">Contact</a></li>
-                        </ul>
-                    </div>
-                    <button
-                        class="flex  justify-center items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
-                        aria-label="Contact Now">
-                        Contact Now
-                        <i class="fas fa-angles-right fa-xs"></i>
-                    </button>
-                </div>
+
             </div>
 
             <div class="hidden md:flex items-center gap-5 lg:gap-8">
                 <ul class="flex gap-4 lg:gap-8" role="menu">
-                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Home</a></li>
-                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">About</a></li>
-                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Services</a></li>
-                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Blog</a></li>
-                    <li><a href="#" class="font-semibold hover:text-accent" role="menuitem">Contact</a></li>
+                    <li>
+                        <a href="index.html" class="font-semibold hover:text-accent" role="menuitem">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html" class="font-semibold hover:text-accent" role="menuitem">About</a>
+                    </li>
+                    <li>
+                        <a href="our-service.html" class="font-semibold hover:text-accent" role="menuitem">Services</a>
+                    </li>
+                    <li>
+                        <a href="blogs.html" class="font-semibold hover:text-accent" role="menuitem">Blog</a>
+                    </li>
+                    <li>
+                        <a href="contact-us.html" class="font-semibold hover:text-accent" role="menuitem">Contact</a>
+                    </li>
                 </ul>
                 <button class="flex items-center justify-center border rounded-full w-7 h-7" aria-label="Search">
                     <i class="fas fa-search fa-sm"></i>
                 </button>
-                <button class="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
-                    aria-label="Contact Now">
-                    Contact Now
-                    <i class="fas fa-angles-right fa-xs"></i>
-                </button>
-                <button class="lg:hidden flex items-center justify-center px-5 py-2 bg-accent text-white rounded-3xl"
-                    aria-label="Contact Now">
-                    <i class="fas fa-headset"></i>
-                </button>
             </div>
         </nav>
+        <div id="modal"
+            class="w-[75%] md:w-[50%] h-screen lg:hidden hidden flex-col justify-between absolute top-0 end-0 z-[1000] p-4 text-white  bg-[#223361]">
+            <div class="w-full flex flex-col">
+                <div id="close" class="w-7 h-7 flex justify-center items-center self-end cursor-pointer">
+                    <i class="fa-solid fa-xmark fa-xl"></i>
+                </div>
+                <ul class="flex flex-col gap-4 lg:gap-8" role="menu">
+                    <li class="font-semibold hover:text-accent">
+                        <a href="index.html" role="menuitem">Home</a>
+                    </li>
+                    <li class="font-semibold hover:text-accent">
+                        <a href="about.html" role="menuitem">About</a>
+                    </li>
+                    <li class="font-semibold hover:text-accent">
+                        <a href="our-service.html" role="menuitem">Services</a>
+                    </li>
+                    <li class="font-semibold hover:text-accent">
+                        <a href="blogs.html" role="menuitem">Blog</a>
+                    </li>
+                    <li class="font-semibold hover:text-accent">
+                        <a href="contact-us.html" role="menuitem">Contact</a>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="hidden lg:block absolute top-[40%] left-[15%] z-10">
-            <h1 class="text-5xl font-bold text-white">Appointments</h1>
-            <p class="text-white">
-                <a href="/index.html" class="hover:text-accent">Home</a> /
-                <span class="text-accent">Appointments</span>
+        </div>
+        <div class="hidden lg:flex flex-col gap-4 absolute top-[40%] left-[15%] z-10">
+            <h1 class="text-5xl font-bold ">Appointment Page</h1>
+            <p class="">
+                <a href="index.html" class="hover:text-accent">Home</a> /
+                <span class="text-accent">Appointment Page</span>
             </p>
         </div>
     </header>
+
 
     <main
         class="w-[95%] md:w-[80%] lg:w-[65%] xl:w-[50%] flex flex-col justify-center items-center gap-10 mx-auto rounded-3xl my-24 px-2 md:px-8 lg:px-16 py-12 bg-gray">
@@ -87,9 +97,11 @@
         <form action="" class="w-full flex flex-col gap-8">
             <div class="w-full flex flex-col md:flex-row gap-8">
                 <input type="text" class="w-full h-10 outline-0 rounded-lg px-4 py-1" id="name" placeholder="Full Name">
-                <input type="text" class="w-full h-10 outline-0 rounded-lg px-4 py-1" id="email" placeholder="Email Address">
+                <input type="text" class="w-full h-10 outline-0 rounded-lg px-4 py-1" id="email"
+                    placeholder="Email Address">
             </div>
-            <input type="text" class="w-full h-10 outline-0 rounded-lg px-4 py-1" id="address" placeholder="Email Address">
+            <input type="text" class="w-full h-10 outline-0 rounded-lg px-4 py-1" id="address"
+                placeholder="Email Address">
             <select id="service" name="service" placeholder="Choose a service"
                 class="w-full h-10 outline-0 rounded-lg px-4 py-1">
                 <option value="service1">Service 1</option>
