@@ -1,84 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
 
-  <body class="bg-gray-50 font-sans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Get in touch with us for any inquiries or schedule a consultation. Reach out to our doctors directly or call for emergency services." />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="icon" href="../assets/images/logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="../style/output.css">
+  <script src="../scripts/main.js"></script>
+  <title>Medilo</title>
+</head>
+
+<body>
+  <header class="relative h-[30rem]">
+    <img src="../assets/images/banner.jpg" alt="Beautiful hospital banner"
+      class="w-full h-full absolute z-0 object-cover">
+    <nav class="container mx-auto flex justify-between items-center absolute z-[1] px-8 xl:px-32 py-4">
+      <div class="w-full lg:w-[10rem] flex items-center justify-between ">
+        <a href="index.html" class="w-auto flex justify-start items-center gap-2 border-0 outline-0">
+          <img class="w-12 md:w-16" src="../assets/images/logo.png" alt="Medilo Logo">
+          <h4 class="text-2xl font-[900]">Medilo</h4>
+        </a>
+        <div id="menu" class="md:hidden flex items-center justify-center cursor-pointer">
+          <i class="fas fa-bars fa-xl"></i>
+        </div>
+
+      </div>
+
+      <div class="hidden md:flex items-center gap-5 lg:gap-8">
+        <ul class="flex gap-4 lg:gap-8" role="menu">
+          <li>
+            <a href="index.html" class="font-semibold hover:text-accent" role="menuitem">Home</a>
+          </li>
+          <li>
+            <a href="about.html" class="font-semibold hover:text-accent" role="menuitem">About</a>
+          </li>
+          <li>
+            <a href="our-service.html" class="font-semibold hover:text-accent" role="menuitem">Services</a>
+          </li>
+          <li>
+            <a href="blogs.html" class="font-semibold hover:text-accent" role="menuitem">Blog</a>
+          </li>
+          <li>
+            <a href="contact-us.html" class="font-semibold hover:text-accent" role="menuitem">Contact</a>
+          </li>
+        </ul>
+        <button class="flex items-center justify-center border rounded-full w-7 h-7" aria-label="Search">
+          <i class="fas fa-search fa-sm"></i>
+        </button>
+        <button
+          class="main-book-appointment hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
+          aria-label="Book Now">
+          Book Now
+          <div><i class="fas fa-angles-right fa-xs"></i></div>
+        </button>
+        <button
+          class="main-book-appointment lg:hidden flex items-center justify-center px-5 py-2 bg-accent text-white rounded-3xl"
+          aria-label="Book Now">
+          <i class="fas fa-headset"></i>
+        </button>
+      </div>
+    </nav>
+    <div id="modal"
+      class="w-[75%] md:w-[50%] h-screen lg:hidden hidden flex-col justify-between absolute top-0 end-0 z-[1000] p-4 text-white  bg-[#223361]">
+      <div class="w-full flex flex-col">
+        <div id="close" class="w-7 h-7 flex justify-center items-center self-end cursor-pointer">
+          <i class="fa-solid fa-xmark fa-xl"></i>
+        </div>
+        <ul class="flex flex-col gap-4 lg:gap-8" role="menu">
+          <li class="font-semibold hover:text-accent">
+            <a href="index.html" role="menuitem">Home</a>
+          </li>
+          <li class="font-semibold hover:text-accent">
+            <a href="about.html" role="menuitem">About</a>
+          </li>
+          <li class="font-semibold hover:text-accent">
+            <a href="our-service.html" role="menuitem">Services</a>
+          </li>
+          <li class="font-semibold hover:text-accent">
+            <a href="blogs.html" role="menuitem">Blog</a>
+          </li>
+          <li class="font-semibold hover:text-accent">
+            <a href="contact-us.html" role="menuitem">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <button
+        class="main-book-appointment flex  justify-center items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl"
+        aria-label="Book Now">
+        Book Now
+        <div><i class="fas fa-angles-right fa-xs"></i></div>
+      </button>
+    </div>
+    <div class="hidden lg:flex flex-col gap-2 absolute top-[40%] left-[15%] z-10">
+      <h1 class="text-5xl font-bold ">Contact US</h1>
+      <p class="">
+        <a href="index.html" class="hover:text-accent">Home</a> /
+        <span class="text-accent">Contact US</span>
+      </p>
+    </div>
+  </header>
+
+  <main class="w-full flex flex-col gap-4">
     <!-- Contact Form Section -->
-    <section class="container mx-auto my-12 max-w-5xl">
-      <div class="grid md:grid-cols-2 gap-1 items-center">
-        <div>
-          <img
-            src="../assets/images/contact_2.png"
-            alt="Doctor"
-            class="rounded-lg shadow-lg"
-          />
+    <section class="container grid md:grid-cols-2 gap-5 justify-center items-center mx-auto my-16">
+      <div class="w-full h-[35rem] 2xl:h-[42rem] mx-auto relative flex flex-col justify-end">
+        <!-- Top Section with Images -->
+        <div class="absolute top-[20%] md:top-[20%] lg:top-[2%] z-10 flex justify-end container mx-auto gap-4 px-4 lg:px-8">
+          <div class="w-full lg:w-[60%] xl:w-[40%] bg-white overflow-hidden">
+            <img src="../assets/images/contact.png" alt="Contact us" class="w-full h-auto object-cover" />
+          </div>
+          <div class="w-full lg:w-[60%] xl:w-[40%] overflow-hidden">
+            <img src="../assets/images/sprocket.png" alt="Sprocket" class="w-full h-auto object-cover" />
+          </div>
         </div>
-        <div>
-          <h3 class="text-3xl font-bold mb-4">
-            Meet Our Specialist This <br />
-            Doctor Meet
-          </h3>
-          <form class="space-y-4">
-            <input
-              type="text"
-              placeholder="Your name"
-              class="w-full border border-gray-100 p-3 rounded-lg"
-            />
-            <input
-              type="email"
-              placeholder="Your email"
-              class="w-full border border-gray-300 p-3 rounded-lg"
-            />
-            <input
-              type="text"
-              placeholder="Your Subject"
-              class="w-full border border-gray-300 p-3 rounded-lg"
-            />
-            <input
-              type="text"
-              placeholder="Your phone"
-              class="w-full border border-gray-300 p-3 rounded-lg"
-            />
-            <textarea
-              placeholder="Your comments"
-              class="w-full border border-gray-300 p-3 rounded-lg"
-            ></textarea>
-            <input
-              type="text"
-              placeholder="Type the below word"
-              class="w-full border border-gray-300 p-3 rounded-lg"
-            />
-            <button
-              type="submit"
-              class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-lg"
-            >
-              Send Request
-            </button>
-          </form>
+
+        <!-- Bottom Section with Emergency Call -->
+        <div class="h-60 lg:h-72 bg-[#d8e6f3] border-t-[3px] border-blue-500 flex items-end py-12 md:py-16 px-4 lg:px-8">
+          <div class="w-full max-w-3xl mx-auto flex items-center gap-6">
+            <!-- Icon Box -->
+            <div
+              class="w-16 h-16 lg:w-20 lg:h-20 bg-blue text-white flex items-center justify-center rounded-full shadow-lg">
+              <i class="fas fa-phone-volume fa-2xl"></i>
+            </div>
+            <!-- Text Section -->
+            <div class="flex flex-col gap-2">
+              <h5 class="text-lg md:text-xl lg:text-2xl font-bold text-blue-500">Emergency Call</h5>
+              <p class="text-sm md:text-base text-gray-700">24/7 Support for your convenience</p>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <div class="container flex flex-col justify-center px-3 gap-8">
+        <!-- Header -->
+        <div class=" flex flex-col gap-2 text-center lg:text-left">
+          <h4 class="text-lg font-bold text-accent uppercase">Contact Us</h4>
+          <p class="text-2xl lg:text-3xl font-bold text-gray-800 leading-relaxed">
+            Meet Our Specialist This Doctor Meet
+          </p>
+        </div>
+
+        <!-- Form -->
+        <form class="w-full flex flex-col gap-8">
+          <div class="w-full flex flex-col md:flex-row gap-8">
+            <input type="text" id="name" name="name" class="w-full h-10 outline-0 rounded-lg px-4 py-1 bg-gray"
+              placeholder="Full Name">
+            <input type="text" id="email" name="email" class="w-full h-10 outline-0 rounded-lg px-4 py-1 bg-gray"
+              placeholder="Email Address">
+          </div>
+          <div class="w-full flex flex-col md:flex-row gap-8">
+            <select id="service" name="service" placeholder="Choose a service"
+              class="w-full h-10 outline-0 rounded-lg px-4 py-1 bg-gray">
+              <option value="service1">Service 1</option>
+              <option value="service2">Service 2</option>
+              <option value="service3">Service 3</option>
+              <option value="service4">Service 4</option>
+              <option value="service5">Service 5</option>
+              <option value="service6">Service 6</option>
+            </select>
+            <input type="text" id="phone" name="phone" class="w-full h-10 outline-0 rounded-lg px-4 py-1 bg-gray"
+              placeholder="Phone Number">
+          </div>
+
+          <textarea name="comment" id="comment" class="outline-0 rounded-lg px-4 py-1 resize-none bg-gray" rows="4"
+            placeholder="Write Your Message"></textarea>
+          <div class="flex flex-col gap-4">
+            <input type="text" id="auth" name="auth" class="w-full h-10 outline-0 rounded-lg px-4 py-1 bg-gray"
+              placeholder="Type the below text">
+            <div class="w-min px-8 py-2 bg-gray">
+              <p class="italic select-none">5RLOpW</p>
+            </div>
+            <div>
+              <button class="font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue-600"
+                aria-label="Send Request">
+                Send Request
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </section>
 
     <!-- Map Section -->
-    <section class="bg-gray-200 py-8">
-      <div class="container mx-auto">
-        <div class="w-full h-64">
-          <!-- Google Maps Embed -->
-          <iframe
-            class="w-full h-full rounded-lg"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093703!2d144.95373531562024!3d-37.816279742021735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf57769e77b79d8f3!2sFederation%20Square!5e0!3m2!1sen!2sus!4v1616798142976!5m2!1sen!2sus"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          >
-          </iframe>
-        </div>
+    <section class="container mx-auto">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218360.43102449446!2d29.79007558849771!3d31.22400577226321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c49126710fd3%3A0xb4e0cda629ee6bb9!2sAlexandria%2C%20Alexandria%20Governorate!5e0!3m2!1sen!2seg!4v1734527241340!5m2!1sen!2seg"
+        width="100%" height="500" style="border:0;" allowfullscreen="true" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </main>
+
+  <footer class="w-full flex flex-col">
+    <section class="w-full flex justify-center relative bg-[#273764]">
+      <div class="w-full h-full hidden md:block absolute inset-0">
+        <img src="../assets/images/footer.jpg" alt="Footer Image" class="w-full h-full object-cover">
+      </div>
+      <div class="w-full h-full md:hidden absolute bg-[#273764]"></div>
+      <div
+        class="container mx-auto flex flex-col lg:flex-row justify-around items-start lg:items-center gap-8 px-5 py-4 lg:py-0 relative z-10 text-white">
+
+        <section class="w-full lg:w-[30%] h-full flex flex-col gap-8 p-4 lg:bg-accent">
+          <a href="index.html" class="w-auto flex justify-start items-center gap-2 border-0 outline-0">
+            <img class="w-16" src="../assets/images/logo.png" alt="Medilo Logo">
+            <h4 class="text-3xl md:text-2xl font-[900]">Medilo</h4>
+          </a>
+          <hr class="hidden lg:block border-white">
+          <div class="space-y-6">
+            <div class="flex items-start gap-3">
+              <div><i class="fas fa-clock"></i></div>
+              <div>
+                <p class="font-semibold">Open Hours:</p>
+                <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div> <i class="fas fa-location-dot"></i></div>
+              <p>13/A, Miranda Halim City.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div> <i class="fas fa-phone"></i></div>
+              <p>099 695 695 3</p>
+            </div>
+            <div class="flex justify-end md:justify-start gap-3">
+              <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://www.github.com" target="_blank" aria-label="GitHub"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://x.com" target="_blank" aria-label="Twitter"
+                class="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="w-full lg:w-[70%] flex flex-wrap lg:flex-nowrap justify-between lg:justify-around gap-8 ">
+          <div>
+            <h2 class="text-xl font-bold pb-4">Service</h2>
+            <ul class="space-y-2">
+              <li>Why Choose Us</li>
+              <li>Our Solutions</li>
+              <li>Partners</li>
+              <li>Core Values</li>
+              <li>Our Projects</li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold pb-4">Quick Links</h2>
+            <ul class="space-y-2">
+              <li>Residents</li>
+              <li>Business</li>
+              <li>Online Service</li>
+              <li>Visiting</li>
+              <li>Employment</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-xl font-bold pb-4">Recent Posts</h2>
+            <div class="space-y-4">
+              <article class="flex items-start gap-3">
+                <img src="../assets/images/posts/post-0.png" alt="Post" class="w-24 h-20 object-cover rounded-lg">
+                <div>
+                  <p class="text-sm">23 Jun 2024</p>
+                  <h3 class="font-semibold">We Round Solution - York Blog</h3>
+                </div>
+              </article>
+              <article class="flex items-start gap-3">
+                <img src="../assets/images/posts/post-1.png" alt="Post" class="w-24 h-20 object-cover rounded-lg">
+                <div>
+                  <p class="text-sm">20 Jun 2024</p>
+                  <h3 class="font-semibold">The Medical Of This - Working Health</h3>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
-  </body>
+
+    <section class="w-full relative py-4 text-white bg-[#1d2c4d]">
+      <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-sm">Copyright &copy; 2024 Medilo, All Rights Reserved</p>
+        <ul class="flex justify-center items-center gap-4 text-sm">
+          <li>About us</li>
+          <li>Events</li>
+          <li>News</li>
+          <li>Services</li>
+        </ul>
+      </div>
+      <button id="back-top" type="button"
+        class="w-10 aspect-square flex items-center justify-center rounded-full absolute bottom-16 end-4 md:bottom-8 md:end-2 cursor-pointer text-accent bg-white">
+        <i class="fas fa-arrow-up"></i>
+      </button>
+    </section>
+  </footer>
+</body>
+
 </html>
