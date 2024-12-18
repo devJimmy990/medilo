@@ -1,19 +1,17 @@
-onload = () => {
-    const backTop = document.getElementById('back-top')
-
-    const menu = document.getElementById('menu');
-    const close = document.getElementById('close');
+window.addEventListener('load', () => {
     const modal = document.getElementById('modal');
 
-    close.addEventListener('click', () => {
-        modal.classList.replace('flex', 'hidden');
-    })
 
-    menu.addEventListener('click', () => {
-        modal.classList.replace('hidden', 'flex');
-    })
+    document.getElementById('close')
+        .addEventListener('click', () => { modal.classList.replace('flex', 'hidden'); })
 
-    backTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
+    document.getElementById('menu')
+        .addEventListener('click', () => { modal.classList.replace('hidden', 'flex'); })
+
+    document.getElementById('back-top')
+        .addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+    document.querySelectorAll('.main-book-appointment')
+        .forEach(btn => { btn.addEventListener('click', () => { window.location.assign('appointment.html'); }); });
+
+});
