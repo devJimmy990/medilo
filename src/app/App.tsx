@@ -1,6 +1,8 @@
 import logo from '../assets/images/logo.svg';
 
 import '../styles/App.css';
+import OurServices from './OurServices';
+import ServicesDetails from './ServicesDetails';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <OurServices />
+      <ServicesDetails />
     </div>
   );
 }
