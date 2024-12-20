@@ -14,42 +14,42 @@ export const services: ServiceModel[] = [
     {
         title: "Pharmacology",
         description: "Medical competitor research startup to financial",
-        icon: <FaBriefcaseMedical />,
+        icon: <FaBriefcaseMedical size={28}/>,
     },
     {
         title: "Orthopedic",
         description: "Medical competitor research startup to financial",
-        icon: <FaXRay />,
+        icon: <FaXRay size={28}/>,
     },
     {
         title: "Hematology",
         description: "Medical competitor research startup to financial",
-        icon: <FaHeartPulse />,
+        icon: <FaHeartPulse size={28}/>,
     },
     {
         title: "Plastic Surgery",
         description: "Medical competitor research startup to financial",
-        icon: <FaUserDoctor />,
+        icon: <FaUserDoctor size={28}/>,
     },
     {
         title: "Neurology",
         description: "Medical competitor research startup to financial",
-        icon: <FaHeadSideVirus />,
+        icon: <FaHeadSideVirus size={28}/>,
     },
     {
         title: "Ophthalmology",
         description: "Medical competitor research startup to financial",
-        icon: <FaEye />,
+        icon: <FaEye size={28}/>,
     },
     {
         title: "Dental Care",
         description: "Medical competitor research startup to financial",
-        icon: <FaHospitalUser />,
+        icon: <FaHospitalUser size={28}/>,
     },
     {
         title: "Cardiology",
         description: "Medical competitor research startup to financial",
-        icon: <FaBedPulse />,
+        icon: <FaBedPulse size={28}/>,
     },
 ];
 

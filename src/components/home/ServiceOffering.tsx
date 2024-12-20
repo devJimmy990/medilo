@@ -1,6 +1,18 @@
-import { FC, memo } from 'react';
+import { FC, memo, ReactNode, useState } from 'react';
+import { FaMicroscope, FaTruckMedical, FaHeartPulse, FaHandHoldingHeart } from "react-icons/fa6";
+
+type ServiceModel = {
+    label: string,
+    icon: ReactNode
+}
+const services: ServiceModel[] = [
+    { label: "Modern Technology", icon: <FaMicroscope size={20} /> },
+    { label: "Success of Treatment", icon: <FaTruckMedical size={20} /> },
+    { label: "Certified Doctors", icon: <FaHeartPulse size={20} /> },
+    { label: "Medical Advice", icon: <FaHandHoldingHeart size={20} /> }]
 
 const ServiceOffering: FC = () => {
+    const [selectedServiceIndex, setSelectedServiceIndex] = useState<number>(0);
     return (
         <section className="w-full mx-auto flex flex-col gap-8 items-center bg-white px-4 lg:px-8 py-12">
             <div className="container lg:max-w-[65%] text-center flex flex-col items-center gap-4">
@@ -9,42 +21,24 @@ const ServiceOffering: FC = () => {
             </div>
 
             <ul className="w-full container lg:max-w-[65%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <li
-                    className="flex items-center rounded-r-xl shadow hover:shadow-lg transition bg-blue text-white cursor-pointer">
-                    <div
-                        className="w-12 h-full flex items-center justify-center border-r-2 border-white rounded-e-[35%] bg-accent">
-                        <i className="fas fa-microscope fa-lg"></i>
-                    </div>
-                    <h3 className="p-3 text-gray-700 font-medium">Modern Technology</h3>
-                </li>
-                <li
-                    className="flex items-center rounded-r-xl bg-[#f1f7fc] shadow hover:shadow-lg transition cursor-pointer">
-                    <div className="w-12 h-full flex items-center justify-center text-accent">
-                        <i className="fas fa-truck-medical fa-flip-horizontal fa-lg"></i>
-                    </div>
-                    <h3 className="p-3 text-gray-700 font-medium">Success of Treatment</h3>
-                </li>
-                <li
-                    className="flex items-center rounded-r-xl bg-[#f1f7fc] shadow hover:shadow-lg transition cursor-pointer">
-                    <div className="w-12 h-full flex items-center justify-center text-accent">
-                        <i className="fas fa-bed-pulse fa-lg"></i>
-                    </div>
-                    <h3 className="p-3 text-gray-700 font-medium">Certified Doctors</h3>
-                </li>
-                <li
-                    className="flex items-center rounded-r-xl bg-[#f1f7fc] shadow hover:shadow-lg transition cursor-pointer">
-                    <div className="w-12 h-full flex items-center justify-center text-accent">
-                        <i className="fas fa-hand-holding-droplet fa-lg"></i>
-                    </div>
-                    <h3 className="p-3 text-gray-700 font-medium">Medical Advice</h3>
-                </li>
+                {
+                    services.map(({ label, icon }, index) => (
+                        <li key={label} onClick={() => { selectedServiceIndex !== index && setSelectedServiceIndex(index) }}
+                            className={`flex items-center rounded-r-xl bg-[#f1f7fc] shadow hover:shadow-lg transition cursor-pointer ${index === selectedServiceIndex && 'bg-blue text-white'}`}>
+                            <div className={`w-12 h-full flex items-center justify-center  ${index !== selectedServiceIndex ? 'text-accent' : 'border-r-2 border-white rounded-e-[35%] bg-accent'} `}>
+                                {icon}
+                            </div>
+                            <h3 className="p-3 text-gray-700 font-medium">{label}</h3>{/**Done */}
+                        </li>
+                    ))
+                }
             </ul>
 
             <div
-                className="container lg:max-w-[65%] flex flex-col lg:flex-row items-start gap-8 p-4 border border-gray-200 rounded-lg shadow">
-                <div className="flex-shrink-0 w-full lg:w-[40%] bg-amber-400 rounded-lg overflow-hidden">
-                    <img loading='lazy' src={require("../../assets/images/services/service-0.jpg")} alt="Service images"
-                        className="w-full h-full object-cover" />
+                className="container lg:max-w-[65%] h-96 flex flex-col lg:flex-row items-start gap-8 p-4 border border-gray-200 rounded-lg shadow">
+                <div className="w-full lg:w-[40%] h-full rounded-lg">
+                    <img loading='lazy' src={require(`../../assets/images/services/service-${selectedServiceIndex}.jpg`)} alt="Service images"
+                        className="w-full h-full object-fill" />
                 </div>
 
                 <div className="lg:max-w-[60%] flex flex-col gap-6">

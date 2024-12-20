@@ -15,20 +15,15 @@ const MakeAppointment: FC = () => {
 
                     <form className="w-full flex flex-col gap-8">
                         <div className="w-full flex flex-col md:flex-row gap-8">
-                            <input type="text" id="name" name="name" className="w-full h-10 outline-0 rounded-lg px-4 py-1"
+                            <input type="text" id="name" name="name" className="w-full h-10 outline-0 rounded-lg px-4 py-1 focus:ring-2 focus:ring-blue-500"
                                 placeholder="Full Name" />
                             <input type="text" id="email" name="email"
-                                className="w-full h-10 outline-0 rounded-lg px-4 py-1" placeholder="Email Address" />
+                                className="w-full h-10 outline-0 rounded-lg px-4 py-1 focus:ring-2 focus:ring-blue-500" placeholder="Email Address" />
                         </div>
                         <div className="w-full flex flex-col md:flex-row gap-8">
                             <div className="w-full md:w-1/2">
                                 <label htmlFor="service" className="block mb-2 text-sm font-medium text-gray-700">Choose a service</label>
-                                <select
-                                    id="service"
-                                    name="service"
-                                    className="w-full h-10 outline-0 rounded-lg px-4 py-1 border border-gray-300 focus:ring-2 focus:ring-blue-500"
-                                    // placeholder="Choose a service"
-                                >
+                                <select id="service" name="service" className="w-full h-10 outline-0 rounded-lg px-4 py-1" >
                                     <option value="service1">Service 1</option>
                                     <option value="service2">Service 2</option>
                                     <option value="service3">Service 3</option>
@@ -43,14 +38,14 @@ const MakeAppointment: FC = () => {
                                     type="text"
                                     id="phone"
                                     name="phone"
-                                    className="w-full h-10 outline-0 rounded-lg px-4 py-1 border border-gray-300 focus:ring-2 focus:ring-blue-500"
+                                    className="w-full h-10 outline-0 rounded-lg px-4 py-1 focus:ring-2 focus:ring-blue-500"
                                     placeholder="Phone Number"
                                 />
                             </div>
                         </div>
 
 
-                        <textarea name="comment" id="comment" className="outline-0 rounded-lg px-4 py-1 resize-none"
+                        <textarea name="comment" id="comment" className="outline-0 rounded-lg px-4 py-1 resize-none focus:ring-2 focus:ring-blue-500"
                             rows={4} placeholder="Write Your Message"></textarea>
                         <div>
                             <button className="font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue-600"

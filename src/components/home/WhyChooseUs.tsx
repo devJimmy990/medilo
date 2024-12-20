@@ -1,9 +1,26 @@
-import { FC, memo } from 'react';
+import { FC, memo, ReactNode } from 'react';
+import {
+    FaBriefcaseMedical, FaHandHoldingHeart, FaHeartPulse, FaCapsules, FaUserDoctor, FaFlask
+} from "react-icons/fa6";
 
+type ServicesModel = {
+    label: string,
+    icon: ReactNode
+    description: string,
+}
+
+const services: ServicesModel[] = [
+    { label: 'Service & Check', description: 'Medical competitor research startup to financial success', icon: <FaBriefcaseMedical size={24} /> },
+    { label: 'Medical Advices', description: 'Helping you overcome health challenges efficiently', icon: <FaHandHoldingHeart size={24} /> },
+    { label: 'Emergency Help', description: 'Access to top medical professionals and resources', icon: <FaHeartPulse size={24} /> },
+    { label: 'Medical Research', description: 'Tailored health plans designed for your needs', icon: <FaCapsules size={24} /> },
+    { label: 'Qualified Doctors', description: 'Access to top medical professionals and resources', icon: <FaUserDoctor size={24} /> },
+    { label: 'Affordable Prices', description: 'Tailored health plans designed for your needs', icon: <FaFlask size={24} /> },
+]
 const WhyChooseUs: FC = () => {
     return (
-        <section className="md:w-full flex justify-between gap-4 my-16 mx-auto bg-gray-100">
-            <div className="container mx-auto px-4 lg:w-[65%] flex flex-col justify-center gap-10 lg:ms-auto">
+        <section className="md:w-full flex justify-between gap-4  mx-auto bg-gray-100">
+            <div className="container mx-auto px-4 lg:w-[65%] flex flex-col justify-center gap-14 lg:ms-auto">
                 <div className="flex flex-col gap-3">
                     <h4 className="text-lg font-bold text-blue-600 uppercase">Why Choose Us</h4>
                     <h2 className="text-2xl lg:text-4xl font-bold leading-snug">
@@ -11,89 +28,21 @@ const WhyChooseUs: FC = () => {
                     </h2>
                 </div>
 
-                <div className="flex flex-col gap-10">
-                    <div className="flex flex-col gap-8">
-                        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-                            <div className="flex items-center gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-y-16">
+                    {
+                        services.map(({ label, description, icon }, index) => (
+                            <div key={label} className="flex items-center gap-4">
                                 <div
                                     className="w-14 h-14 flex justify-center items-center rounded-md bg-white text-blue shadow-md">
-                                    <i className="fas fa-briefcase-medical fa-xl"></i>
+                                    {icon}
                                 </div>
                                 <div>
-                                    <h4 className="text-xl font-bold text-blue-600">Service & Check</h4>
-                                    <p className="text-gray-700">Medical competitor research startup to financial success.
-                                    </p>
+                                    <h4 className="text-xl font-bold text-blue-600">{label}</h4>
+                                    <p className="text-gray-700">{description}</p>
                                 </div>
                             </div>
-
-                            <hr className="md:hidden border-gray-300" />
-
-                            <div className="flex items-center gap-4">
-                                <div
-                                    className="w-14 h-14 flex justify-center items-center rounded-md bg-white text-blue shadow-md">
-                                    <i className="fas fa-hand-holding-droplet fa-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 className="text-xl font-bold text-blue-600">Medical Advices</h4>
-                                    <p className="text-gray-700">Helping you overcome health challenges efficiently.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <hr className="border-gray-300" />
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-                            <div className="flex items-center gap-4">
-                                <div
-                                    className="w-14 h-14 flex justify-center items-center rounded-md bg-white text-blue shadow-md">
-                                    <i className="fas fa-heart-pulse fa-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 className="text-xl font-bold text-blue-600">Emergency Help</h4>
-                                    <p className="text-gray-700">Access to top medical professionals and resources.</p>
-                                </div>
-                            </div>
-
-                            <hr className="md:hidden border-gray-300" />
-
-                            <div className="flex items-center gap-4">
-                                <div
-                                    className="w-14 h-14 flex justify-center items-center rounded-md bg-white text-blue shadow-md">
-                                    <i className="fas fa-capsules fa-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 className="text-xl font-bold text-blue-600">Medical Research</h4>
-                                    <p className="text-gray-700">Tailored health plans designed for your needs.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <hr className="border-gray-300" />
-                        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-                            <div className="flex items-center gap-4">
-                                <div
-                                    className="w-14 h-14 flex justify-center items-center rounded-md bg-white text-blue shadow-md">
-                                    <i className="fas fa-house-medical fa-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 className="text-xl font-bold text-blue-600">Qualified Doctors</h4>
-                                    <p className="text-gray-700">Access to top medical professionals and resources.</p>
-                                </div>
-                            </div>
-
-                            <hr className="md:hidden border-gray-300" />
-
-                            <div className="flex items-center gap-4">
-                                <div
-                                    className="w-14 h-14 flex justify-center items-center rounded-md bg-white text-blue shadow-md">
-                                    <i className="fas fa-flask fa-xl"></i>
-                                </div>
-                                <div>
-                                    <h4 className="text-xl font-bold text-blue-600">Affordable Prices</h4>
-                                    <p className="text-gray-700">Tailored health plans designed for your needs.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        ))
+                    }
                 </div>
             </div>
 

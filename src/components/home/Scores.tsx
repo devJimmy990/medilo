@@ -8,10 +8,10 @@ type ScoreModel = {
 
 }
 const records: ScoreModel[] = [
-    { title: "Active Client", score: "567", icon: <FaUserGroup /> },
-    { title: "Team Support", score: "23K", icon: <FaHeadset /> },
-    { title: "Projects Complete", score: "241", icon: <FaChartLine /> },
-    { title: "Award Winner", score: "16K", icon: <FaAward /> },
+    { title: "Active Client", score: "567", icon: <FaUserGroup size={24}/> },
+    { title: "Team Support", score: "23K", icon: <FaHeadset size={24}/> },
+    { title: "Projects Complete", score: "241", icon: <FaChartLine size={24}/> },
+    { title: "Award Winner", score: "16K", icon: <FaAward size={24}/> },
 ]
 const Scores: FC = () => {
     return (
