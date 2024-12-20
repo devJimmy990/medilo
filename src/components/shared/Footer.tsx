@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
 import { memo, useCallback } from "react";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
 import { FaLinkedin, FaFacebook, FaGithub, FaTwitter, FaArrowUp, FaMobileAlt } from "react-icons/fa";
+import { Routes } from "core/routes";
 
 const footerLinks: string[] = ["About us", "Events", "News", "Services"]
 
@@ -36,10 +38,10 @@ const Footer = () => {
                     className="container mx-auto flex flex-col lg:flex-row justify-around items-start lg:items-center gap-8 px-5 py-4 lg:py-0 relative z-10 text-white">
 
                     <section className="w-full lg:w-[30%] h-full flex flex-col gap-8 p-4 lg:bg-accent">
-                        <a href="index.html" className="w-auto flex justify-start items-center gap-2 border-0 outline-0">
+                        <Link to={Routes.Home} onClick={onScrollTop} className="w-auto flex justify-start items-center gap-2 border-0 outline-0">
                             <img loading="lazy" className="w-16" src={require('../../assets/images/logo.png')} alt="Medilo Logo" />
                             <h4 className="text-3xl md:text-2xl font-[900]">Medilo</h4>
-                        </a>
+                        </Link>
                         <hr className="hidden lg:block border-white" />
                         <div className="space-y-6">
                             <div className="flex items-start gap-3">
