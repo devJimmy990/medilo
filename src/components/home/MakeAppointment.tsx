@@ -22,7 +22,6 @@ const MakeAppointment: FC = () => {
                         </div>
                         <div className="w-full flex flex-col md:flex-row gap-8">
                             <div className="w-full md:w-1/2">
-                                <label htmlFor="service" className="block mb-2 text-sm font-medium text-gray-700">Choose a service</label>
                                 <select id="service" name="service" className="w-full h-10 outline-0 rounded-lg px-4 py-1" >
                                     <option value="service1">Service 1</option>
                                     <option value="service2">Service 2</option>
@@ -33,7 +32,6 @@ const MakeAppointment: FC = () => {
                                 </select>
                             </div>
                             <div className="w-full md:w-1/2">
-                                <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-700">Phone Number</label>
                                 <input
                                     type="text"
                                     id="phone"
