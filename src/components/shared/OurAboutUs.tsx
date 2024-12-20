@@ -1,6 +1,9 @@
+import { Routes } from 'core/routes';
 import { FC, memo } from 'react';
 import { FaHeadset, FaUserDoctor } from "react-icons/fa6";
 import { IoPlay, IoCheckmarkCircleSharp } from "react-icons/io5";
+import { Link } from 'react-router-dom';
+import { FaAnglesRight } from "react-icons/fa6";
 
 
 const OurAboutUs: FC = () => {
@@ -96,12 +99,14 @@ const OurAboutUs: FC = () => {
 
 
                     <div>
-                        <button id="btn-more-doctors"
-                            className="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 focus:outline-none"
-                            aria-label="Learn more about us">
-                            About More
-                            <i className="fas fa-angles-right fa-xs"></i>
-                        </button>
+                        <Link to={Routes.Doctors}>
+                            <button
+                                className="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 focus:outline-none"
+                                aria-label="Learn more about us">
+                                About More
+                                <FaAnglesRight size={12} />
+                            </button>
+                        </Link>
                     </div>
                 </section>
 

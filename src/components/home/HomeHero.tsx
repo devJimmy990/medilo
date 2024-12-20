@@ -7,7 +7,7 @@ const HomeHero: FC = () => {
         <section className="w-full h-full flex flex-col lg:flex-row justify-between items-center">
             <div className="container mx-auto px-4 max-w-[90%] lg:max-w-[40%] flex flex-col gap-6 text-start">
                 <h1 className="leading-tight lg:leading-[3.5rem] text-3xl lg:text-5xl font-bold text-center lg:text-start">
-                    We hospital Doctors Patients 
+                    We hospital Doctors Patients
                     <span className="px-2 text-accent underline">Service</span>
                 </h1>
                 <p className="text-sm lg:text-base">
@@ -26,19 +26,22 @@ const HomeHero: FC = () => {
                             aria-label="Contact Now">
                             Contact Now
                             <div> <i className="fas fa-angles-right fa-xs"></i></div>
-                        </button></Link>
-                    <button id="btn-discover"
-                        className="flex items-center gap-2 font-bold text-white px-5 py-2 bg-blue rounded-3xl hover:bg-blue/90 transition"
-                        aria-label="Discover More">
-                        Discover More
-                        <div> <i className="fas fa-angles-right fa-xs"></i></div>
-                    </button>
+                        </button>
+                    </Link>
+                    <Link to={Routes.Blogs}>
+                        <button
+                            className="flex items-center gap-2 font-bold text-white px-5 py-2 bg-blue rounded-3xl hover:bg-blue/90 transition"
+                            aria-label="Discover More">
+                            Discover More
+                            <div> <i className="fas fa-angles-right fa-xs"></i></div>
+                        </button>
+                    </Link>
                 </div>
             </div>
 
             <img src={require("../../assets/images/banner-home.jpeg")} alt="Beautiful hospital banner" loading="lazy"
                 className="w-full lg:w-[35%] h-64 lg:h-full object-cover" />
-        </section>
+        </section >
     );
 }
 

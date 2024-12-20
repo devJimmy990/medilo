@@ -10,46 +10,46 @@ type ServiceModel = {
     description: string,
 }
 
-export const services: ServiceModel[] = [
+const services: ServiceModel[] = [
     {
         title: "Pharmacology",
         description: "Medical competitor research startup to financial",
-        icon: <FaBriefcaseMedical size={28}/>,
+        icon: <FaBriefcaseMedical size={28} />,
     },
     {
         title: "Orthopedic",
         description: "Medical competitor research startup to financial",
-        icon: <FaXRay size={28}/>,
+        icon: <FaXRay size={28} />,
     },
     {
         title: "Hematology",
         description: "Medical competitor research startup to financial",
-        icon: <FaHeartPulse size={28}/>,
+        icon: <FaHeartPulse size={28} />,
     },
     {
         title: "Plastic Surgery",
         description: "Medical competitor research startup to financial",
-        icon: <FaUserDoctor size={28}/>,
+        icon: <FaUserDoctor size={28} />,
     },
     {
         title: "Neurology",
         description: "Medical competitor research startup to financial",
-        icon: <FaHeadSideVirus size={28}/>,
+        icon: <FaHeadSideVirus size={28} />,
     },
     {
         title: "Ophthalmology",
         description: "Medical competitor research startup to financial",
-        icon: <FaEye size={28}/>,
+        icon: <FaEye size={28} />,
     },
     {
         title: "Dental Care",
         description: "Medical competitor research startup to financial",
-        icon: <FaHospitalUser size={28}/>,
+        icon: <FaHospitalUser size={28} />,
     },
     {
         title: "Cardiology",
         description: "Medical competitor research startup to financial",
-        icon: <FaBedPulse size={28}/>,
+        icon: <FaBedPulse size={28} />,
     },
 ];
 

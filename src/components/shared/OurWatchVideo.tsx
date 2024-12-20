@@ -1,5 +1,8 @@
 import { FC, memo } from 'react';
 import { IoPlay } from "react-icons/io5";
+import { FaAnglesRight } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
+import { Routes } from 'core/routes';
 
 const OurWatchVideo: FC = () => {
     return (
@@ -32,12 +35,12 @@ const OurWatchVideo: FC = () => {
                             Experience safety and comfort with us.
                         </p>
                     </div>
-                    <button
-                        className="hidden lg:flex items-center gap-2 bg-white text-blue px-6 py-3 rounded-full font-bold transition-all hover:shadow-md"
-                    >
-                        More Videos
-                        <i className="fas fa-angles-right fa-xs"></i>
-                    </button>
+                    <Link to={Routes.Blogs}>
+                        <button className="hidden lg:flex items-center gap-2 bg-white text-blue px-6 py-3 rounded-full font-bold transition-all hover:shadow-md"                    >
+                            More Videos
+                            <FaAnglesRight size={12} />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>

@@ -1,4 +1,7 @@
+import { Routes } from "core/routes";
 import { FC, memo } from "react";
+import { FaAnglesRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const MedicalService: FC = () => {
     return (
@@ -27,12 +30,14 @@ const MedicalService: FC = () => {
 
 
             <div className="hidden md:flex items-center">
-                <button
-                    className="book-appointment h-10 flex items-center gap-2 font-bold text-blue px-5 py-2 bg-white rounded-3xl"
-                    aria-label="Book Now">
-                    Booking Now
-                    <i className="fas fa-angles-right fa-xs"></i>
-                </button>
+                <Link to={Routes.Appointment}>
+                    <button
+                        className="book-appointment h-10 flex items-center gap-2 font-bold text-blue px-5 py-2 bg-white rounded-3xl"
+                        aria-label="Book Now">
+                        Booking Now
+                        <FaAnglesRight size={12} />
+                    </button>
+                </Link>
             </div>
         </section>
     );
