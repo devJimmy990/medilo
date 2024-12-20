@@ -13,7 +13,7 @@ const MakeAppointment = lazy(() => import("components/home/MakeAppointment"));
 
 const Home: FC = () => {
     return (
-        <main className="w-full bg-gray">
+        <main className="w-full flex flex-col gap-12 bg-gray relative">
             <HomeHero />
             <MedicalService />
             <OurAboutUs />

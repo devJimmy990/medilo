@@ -7,7 +7,8 @@ const OurWatchVideo = lazy(() => import('components/shared/OurWatchVideo'));
 
 const About: FC = () => {
     return (
-        <main className="w-full flex flex-col items-center bg-gray">
+
+        <main className="w-full flex flex-col gap-12 items-center relative bg-gray">
             <OurAboutUs />
             <Scores />
             <OurWatchVideo />
