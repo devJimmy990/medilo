@@ -33,10 +33,10 @@ const InfoDoctor: FC = () => {
     },
   ];
   return (
-    <section className="detail-doctor grid grid-cols-1 md:grid-cols-2 container mx-auto my-10 max-w-5xl">
+    <section className="detail-doctor grid grid-cols-1 md:grid-cols-2 container mx-auto my-10 max-w-5xl px-4">
       <img
         className="h-auto sm:w-10/12 mx-auto md:max-w-sm lg:max-w-sm rounded-md"
-        src={require("../assets/images/doctors/doctor-2.jpg")}
+        src={require("../../assets/images/doctors/doctor-2.jpg")}
         alt="image description"
       />
       <div className="content container">

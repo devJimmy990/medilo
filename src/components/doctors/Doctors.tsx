@@ -7,6 +7,8 @@ import img_doctor_5 from "../../assets/images/doctors/doctor-5.jpg";
 import img_doctor_6 from "../../assets/images/doctors/doctor-6.jpg";
 import img_doctor_7 from "../../assets/images/doctors/doctor-7.jpg";
 import img_doctor_8 from "../../assets/images/doctors/doctor-8.jpg";
+import { Link } from "react-router-dom";
+import { Routes } from "core/routes";
 
 const Doctors: FC = () => {
   const img_doctors = [
@@ -50,14 +52,14 @@ const Doctors: FC = () => {
                   Distinctio quasi voluptatibus odio similique deserunt debitis
                   nihil dolor mollitia nobis ullam, dolorem ad,
                 </p>
-                <a href="./doctor-details.html">
+                <Link to={Routes.DetailsDoctor}>
                   <button
                     type="button"
                     className="btn mt-6 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 bg-[#013f68] duration-300 hover:bg-[#0b2332]"
                   >
                     More Details
                   </button>
-                </a>
+                </Link>
               </div>
               <img
                 className="h-96 w-full rounded-lg"

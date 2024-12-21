@@ -1,6 +1,33 @@
-import { memo, FC } from "react";
+import { memo, FC, useEffect, useRef } from "react";
 
 const SkillsDoctor: FC = () => {
+  const progressContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const progressContainer = progressContainerRef.current;
+      if (!progressContainer) return;
+
+      const progressBars = progressContainer.querySelectorAll<HTMLDivElement>(
+        ".progress .style-background"
+      );
+
+      if (progressContainer.offsetHeight <= window.scrollY) {
+        progressBars.forEach((bar) => {
+          const width = bar.getAttribute("data-set");
+          if (width) {
+            bar.style.width = width;
+          }
+        });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   type ProgressDataType = {
     title: string;
     width: number;
@@ -24,7 +51,7 @@ const SkillsDoctor: FC = () => {
     },
   ];
   return (
-    <section className="info-doctor max-w-5xl mx-auto">
+    <section className="info-doctor max-w-5xl mx-auto px-4">
       <p className="text-[#676767]">
         The majority have differed alteration in some form m=, by injected
         humour or randomized words which don't look even slightly verifiable if
@@ -36,8 +63,11 @@ const SkillsDoctor: FC = () => {
         letters as opposed to using content here making it look like readable
         english many
       </p>
-      <div className="progress-container flex flex-wrap justify-between mt-6">
-        {progressData.map(({title , width}, index) => {
+      <div
+        ref={progressContainerRef}
+        className="progress-container flex flex-wrap justify-between mt-6"
+      >
+        {progressData.map(({ title, width }, index) => {
           return (
             <div
               key={index}
@@ -62,3 +92,5 @@ const SkillsDoctor: FC = () => {
     </section>
   );
 };
+
+export default memo(SkillsDoctor);
