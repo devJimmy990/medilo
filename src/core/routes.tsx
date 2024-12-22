@@ -7,8 +7,9 @@ const Blogs = lazy(() => import("../app/Blogs"));
 const Contact = lazy(() => import("../app/Contact"));
 const Doctors = lazy(() => import("../app/Doctors"));
 const Services = lazy(() => import("../app/Services"));
-const Appointment = lazy(() => import("../app/Appointment"));
 const NotFound = lazy(() => import("../app/NotFound"));
+const Appointment = lazy(() => import("../app/Appointment"));
+const ServiceDetails = lazy(() => import("../app/ServiceDetails"));
 
 type Route = { path: string; element: ReactNode };
 
@@ -20,7 +21,8 @@ const routes: Route[] = [
   { path: "/doctors", element: <Doctors /> },
   { path: "/services", element: <Services /> },
   { path: "/appointment", element: <Appointment /> },
-  { path: "/details-doctor", element: <DoctorDetails /> },
+  { path: "/doctor/:id", element: <DoctorDetails /> },
+  { path: "/service/:title", element: <ServiceDetails /> },
   { path: "*", element: <NotFound /> },
 ];
 
@@ -32,7 +34,8 @@ const Routes = Object.freeze({
   Doctors: "/doctors",
   Services: "/services",
   Appointment: "/appointment",
-  DetailsDoctor: "/details-doctor",
+  DoctorDetails: "/doctor",
+  ServiceDetails: "/service",
 });
 
 export { Routes };

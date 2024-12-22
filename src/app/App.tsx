@@ -1,25 +1,24 @@
 import routes from "core/routes";
-import { lazy, Suspense } from "react";
-import Footer from "components/shared/Footer";
-import Header from "components/shared/Header";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { lazy, FC, memo } from "react";
+import { Routes, Route } from "react-router-dom";
 
-const Loader = lazy(() => import("../components/Loader"));
 
-const App: React.FC = () => {
+const Header = lazy(() => import("components/shared/Header"));
+const Footer = lazy(() => import("components/shared/Footer"));
+
+
+const App: FC = () => {
   return (
-    <Router>
-      <Suspense fallback={<Loader />}>
-        <Header />
-        <Routes>
-          {routes.map(({ path, element }) => (
-            <Route key={path} path={path} element={element} />
-          ))}
-        </Routes>
-        <Footer />
-      </Suspense>
-    </Router>
+    <>
+      <Header />
+      <Routes>
+        {routes.map(({ path, element }) => (
+          <Route key={path} path={path} element={element} />
+        ))}
+      </Routes>
+      <Footer />
+    </>
   );
 };
 
-export default App;
+export default memo(App);
