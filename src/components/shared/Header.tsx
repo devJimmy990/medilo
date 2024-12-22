@@ -1,6 +1,6 @@
 import { Routes } from "core/routes";
-import { memo, useState } from "react";
-import { Link } from "react-router-dom";
+import { FC, memo, useState } from "react";
+import { NavLink, Link } from "react-router-dom";
 import { FaHeadset, FaAnglesRight } from "react-icons/fa6";
 import { IoCloseSharp, IoListOutline, IoSearchSharp } from "react-icons/io5";
 
@@ -11,7 +11,7 @@ const links: { label: string, route: string }[] = [
     { label: "Blogs", route: Routes.Blogs },
     { label: "Contact Us", route: Routes.Contact },
 ]
-const Header = () => {
+const Header: FC = () => {
     const [openModal, setOpenModal] = useState<boolean>(false);
     return (
         <header className="w-full h-auto bg-gray">
@@ -33,11 +33,12 @@ const Header = () => {
                             <ul className="flex flex-col gap-4 lg:gap-8" role="menu">
                                 {
                                     links.map(({ label, route }) => (
-                                        <Link key={label} to={route} className="hover:rounded-xl hover:px-3 hover:py-1 hover:bg-accent" onClick={() => { openModal && setOpenModal(false) }}>
+                                        <NavLink key={label} to={route} className={({ isActive }) =>
+                                            isActive ? "text-red-500" : "hover:rounded-xl hover:px-3 hover:py-1 hover:bg-accent"} onClick={() => { openModal && setOpenModal(false) }}>
                                             <li className="font-semibold" role="menuitem">
                                                 {label}
                                             </li>
-                                        </Link>
+                                        </NavLink>
                                     ))
                                 }
                             </ul>
@@ -58,9 +59,10 @@ const Header = () => {
                         {
                             links.map(({ label, route }) => (
                                 <li key={label}>
-                                    <Link to={route} className="font-semibold hover:text-accent" role="menuitem">
+                                    <NavLink to={route} className={({ isActive }) =>
+                                        isActive ? "text-white bg-accent px-6 py-1 rounded-xl" : "font-semibold hover:text-accent"} role="menuitem">
                                         {label}
-                                    </Link>
+                                    </NavLink>
                                 </li>
                             ))
                         }

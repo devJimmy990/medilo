@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { memo, useCallback } from "react";
+import { FC, memo, useCallback } from "react";
 import { FaLocationDot, FaClock } from "react-icons/fa6";
 import { FaLinkedin, FaFacebook, FaGithub, FaTwitter, FaArrowUp, FaMobileAlt } from "react-icons/fa";
 import { Routes } from "core/routes";
@@ -24,7 +24,7 @@ const Posts: Post[] = [
     { date: "20 Jun 2024", title: "The Medical Of This - Working Health" },
 ]
 
-const Footer = () => {
+const Footer: FC = () => {
     const onScrollTop = useCallback(() => window.scrollTo({ top: 0, behavior: 'smooth', }), [])
 
     return (

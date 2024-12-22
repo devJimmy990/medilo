@@ -1,18 +1,25 @@
-import { memo } from "react";
+import { lazy, memo } from "react";
+import { useLocation } from 'react-router-dom';
 
-import AllService from "components/service-details/AllService";
-import ServiceDetailsText from "components/service-details/ServiceDetailsText";
-import ServiceDetailsBox from "components/service-details/ServiceDetailsBox";
-import ServiceDetailsIcons from "components/service-details/ServiceDetailsIcons";
+const Banner = lazy(() => import("components/shared/Banner"));
+const AllService = lazy(() => import("components/service-details/AllService"));
+const ServiceReview = lazy(() => import("components/service-details/ServiceReview"));
+const ServiceScores = lazy(() => import("components/service-details/ServiceScores"));
 
 const ServiceDetails = () => {
+  const { pathname } = useLocation();
+  const service = pathname.split('/')[2];
   return (
-    <main className="px-2 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-4">
-      <AllService />
-      <ServiceDetailsText />
-      <ServiceDetailsBox />
-      <ServiceDetailsIcons />
-    </main>
+    <div className="flex flex-col relative bg-gray">
+      <Banner page={service.replace('-', ' ')} path={`services/${service}`} />
+      <div className="mt-[30rem] py-20 bg-white">
+        <main className="container flex flex-col gap-8 mx-auto ">
+          <AllService />
+          <ServiceReview />
+          <ServiceScores />
+        </main>
+      </div>
+    </div >
   );
 };
 
