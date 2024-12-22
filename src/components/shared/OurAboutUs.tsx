@@ -1,5 +1,5 @@
 import { Routes } from 'core/routes';
-import { FC, memo } from 'react';
+import { FC, memo, useCallback } from 'react';
 import { FaHeadset, FaUserDoctor } from "react-icons/fa6";
 import { IoPlay, IoCheckmarkCircleSharp } from "react-icons/io5";
 import { Link } from 'react-router-dom';
@@ -7,6 +7,7 @@ import { FaAnglesRight } from "react-icons/fa6";
 
 
 const OurAboutUs: FC = () => {
+    const onScrollTop = useCallback(() => window.scrollTo({ top: 0, behavior: 'smooth', }), [])
     return (
         <section className="container mx-auto flex flex-col lg:flex-row justify-center items-center gap-16 bg-white">
             <div className="w-full lg:w-[45%] h-[30rem] lg:h-[35rem] flex items-start relative">
@@ -89,17 +90,19 @@ const OurAboutUs: FC = () => {
                                 <IoCheckmarkCircleSharp />
                             </div>
                         </div>
-                        <p className="flex-1 m-0 -p-0">
-                            There are many variations of processes available in this medical service team.
-                            <span className="font-bold text-accent underline hover:text-accent-dark cursor-pointer">
-                                READ MORE +
+
+
+                        <p>
+                            <span>There are many variations of processes available in this medical service team. </span>
+                            <span className="font-bold text-accent underline">
+                                READ MORE+
                             </span>
-                        </p>
+                        </p> 
                     </div>
 
 
                     <div>
-                        <Link to={Routes.Doctors}>
+                        <Link to={Routes.Doctors} onClick={onScrollTop}>
                             <button
                                 className="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 focus:outline-none"
                                 aria-label="Learn more about us">
