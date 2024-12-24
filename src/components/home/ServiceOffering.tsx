@@ -1,5 +1,8 @@
-import { FC, memo, ReactNode, useState } from 'react';
+import { FC, memo, lazy, ReactNode, useState } from 'react';
 import { FaMicroscope, FaTruckMedical, FaHeartPulse, FaHandHoldingHeart } from "react-icons/fa6";
+
+const SubTitle = lazy(() => import("components/SubTitle"));
+const BorderedTitle = lazy(() => import("components/BorderedTitle"));
 
 type ServiceModel = {
     label: string,
@@ -14,13 +17,13 @@ const services: ServiceModel[] = [
 const ServiceOffering: FC = () => {
     const [selectedServiceIndex, setSelectedServiceIndex] = useState<number>(0);
     return (
-        <section className="w-full mx-auto flex flex-col gap-8 items-center bg-white px-4 lg:px-8 py-12">
+        <section className="w-full mx-auto flex flex-col gap-8 items-center px-4 lg:px-8 py-12 bg-white">
             <div className="container lg:max-w-[65%] text-center flex flex-col items-center gap-4">
-                <h4 className="text-xl font-semibold text-gray-700">Service Offering</h4>
-                <p className="text-lg text-gray-500">Explore Our Service Offerings</p>
+                <BorderedTitle borderStart borderEnd label="Service Offering" />
+                <SubTitle label="Explore Our Service Offerings" />
             </div>
 
-            <ul className="w-full container lg:max-w-[65%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <ul className="w-full container lg:max-w-[85%] xl:max-w-[65%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {
                     services.map(({ label, icon }, index) => (
                         <li key={label} onClick={() => { selectedServiceIndex !== index && setSelectedServiceIndex(index) }}
@@ -35,7 +38,7 @@ const ServiceOffering: FC = () => {
             </ul>
 
             <div
-                className="container lg:max-w-[65%] h-96 flex flex-col lg:flex-row items-start gap-8 p-4 border border-gray-200 rounded-lg shadow">
+                className="container lg:max-w-[65%] lg:h-96 flex flex-col lg:flex-row items-start gap-8 p-4 border border-gray-200 rounded-lg shadow">
                 <div className="w-full lg:w-[40%] h-full rounded-lg">
                     <img loading='lazy' src={require(`../../assets/images/services/service-${selectedServiceIndex}.jpg`)} alt="Service images"
                         className="w-full h-full object-fill" />
@@ -62,7 +65,7 @@ const ServiceOffering: FC = () => {
                     </div>
                     <div>
                         <button
-                            className="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue-600"
+                            className="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue"
                             aria-label="Read More">
                             <span> Read More</span>
                             <div><i className="fas fa-angles-right fa-xs"></i></div>

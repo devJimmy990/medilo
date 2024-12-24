@@ -7,7 +7,10 @@ import {
 } from "react-icons/fa6";
 
 
+const SubTitle = lazy(() => import("components/SubTitle"));
 const Banner = lazy(() => import("components/shared/Banner"));
+const Description = lazy(() => import("components/Description"));
+const BorderedTitle = lazy(() => import("components/BorderedTitle"));
 
 type ServiceModel = {
   title: string,
@@ -66,25 +69,17 @@ const Services: FC = () => {
       <Banner page='Our Services' path='services' />
       <div className="mt-[30rem] py-20 bg-white">
         <main className="container flex flex-col gap-8 mx-auto ">
-          <section>
-            <div className="flex justify-center md:justify-start items-center mb-4">
-              <span className="h-[12px] w-[3px] bg-accent block"></span>
-              <span className="w-[15px] h-[4px] bg-accent mr-2"></span>
-              <span className="text-accent font-bold text-[14px]">OUR BEST SERVICE</span>
-            </div>
+          <article>
+            <BorderedTitle borderStart label="OUR BEST SERVICE" />
             <div className="flex-col items-center flex md:flex-row md:justify-between md:items-center md:mb-10">
-              <div className="">
-                <p className="font-bold text-sm mb-4 md:text-4xl md:w-[400px] break-words">
-                  High-Quality Services This Doctor
-                </p>
-              </div>
-              <div className="text-body text-center md:text-start md:w-[450px] text-[14px] mb-4">
+              <SubTitle className="break-words" label="High-Quality Services This Doctor" />
+              <Description className="text-center md:text-start md:w-[450px]">
                 We are privileged to work with hundreds of future-thinking medial,
                 including many of the world's top hardware, software, and brands, feel
                 safe and comfortable in establishing.
-              </div>
+              </Description>
             </div>
-          </section>
+          </article>
 
           <section className="flex flex-col items-center gap-10">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">

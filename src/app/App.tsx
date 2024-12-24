@@ -16,7 +16,7 @@ const App: FC = () => {
           <Route key={path} path={path} element={element} />
         ))}
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

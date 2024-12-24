@@ -1,7 +1,10 @@
 import { FC, memo, lazy } from 'react';
 import { FaUserLarge, FaComment, FaAngleRight } from "react-icons/fa6";
 
+const SubTitle = lazy(() => import("components/SubTitle"));
 const Banner = lazy(() => import("components/shared/Banner"));
+const BorderedTitle = lazy(() => import("components/BorderedTitle"));
+
 type BLogModel = {
     title: string,
     date: { day: string, month: string }
@@ -40,10 +43,8 @@ const Blogs: FC = () => {
             <Banner page='Blogs Page' path='blogs' />
             <div className="mt-[30rem] py-20 bg-white">
                 <main className="container flex flex-col items-center gap-3 mx-auto">
-                    <h4 className="text-2xl font-bold text-accent">OUR LARGEST BLOG</h4>
-                    <p className="text-3xl font-bold text-center">
-                        Latest Posts & Articles
-                    </p>
+                    <BorderedTitle borderStart borderEnd label="OUR LARGEST BLOGS" />
+                    <SubTitle label="Latest Posts & Articles" />
                     <div className="container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
                         {
                             blogs.map(({ title, date: { day, month } }, index) => (

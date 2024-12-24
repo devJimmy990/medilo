@@ -1,15 +1,17 @@
-import { FC, memo } from 'react';
+import { FC, memo, lazy } from 'react';
+const BorderedTitle = lazy(() => import("components/BorderedTitle"));
+const SubTitle = lazy(() => import("components/SubTitle"));
 
 const OurTeam: FC = () => {
     return (
         <section className="container mx-auto my-10 text-center space-y-8">
-            <header>
-                <h4 className="text-lg font-bold text-blue-500">Our Team Members</h4>
-                <h2 className="text-3xl font-bold">Meet Our Specialists</h2>
-            </header>
+            <article className='flex flex-col items-center'>
+                <BorderedTitle borderStart borderEnd label="our team members" />
+                <SubTitle label="meet our specialists" />
+            </article>
             <div className="flex flex-wrap justify-center gap-6">
                 {
-                    Array.from({ length:4}, ((_, index) => (
+                    Array.from({ length: 4 }, ((_, index) => (
                         <figure className="w-56 h-72">
                             <img alt="Doctor" loading="lazy"
                                 className="w-full h-full object-cover rounded-xl"

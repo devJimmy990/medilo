@@ -1,5 +1,7 @@
-import { memo, FC } from "react";
+import { memo, FC, lazy } from "react";
 
+const SubTitle = lazy(() => import("components/SubTitle"));
+const BorderedTitle = lazy(() => import("components/BorderedTitle"));
 const ContactUs: FC = () => {
   return (
     <section className="container grid md:grid-cols-2 gap-5 justify-center items-center mx-auto my-16">
@@ -45,12 +47,8 @@ const ContactUs: FC = () => {
       <div className="container flex flex-col justify-center px-3 gap-8">
         {/* <!-- Header --> */}
         <div className=" flex flex-col gap-2 text-center lg:text-left">
-          <h4 className="text-lg font-bold text-accent uppercase">
-            Contact Us
-          </h4>
-          <p className="text-2xl lg:text-3xl font-bold text-gray-800 leading-relaxed">
-            Meet Our Specialist This Doctor Meet
-          </p>
+          <BorderedTitle borderStart label="contact us" />
+          <SubTitle label="Meet Our Specialist This Doctor Meet" />
         </div>
 
         {/* <!-- Form --> */}
@@ -116,7 +114,7 @@ const ContactUs: FC = () => {
             </div>
             <div>
               <button
-                className="font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue-600"
+                className="font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue"
                 aria-label="Send Request"
               >
                 Send Request

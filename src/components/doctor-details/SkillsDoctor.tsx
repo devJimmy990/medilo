@@ -74,14 +74,14 @@ const SkillsDoctor: FC = () => {
               className="progress w-full sm:w-full md:w-2/5 lg-w-2/5 my-2"
             >
               <div className="flex justify-between mb-1">
-                <span className="text-base font-medium text-[#2fa7f7]">
+                <span className="text-base font-medium text-accent">
                   {title}
                 </span>
-                <span className="text-sm font-medium text-[#2fa7f7]">{`${width}%`}</span>
+                <span className="text-sm font-medium text-accent">{`${width}%`}</span>
               </div>
               <div className="rounded-full h-2.5 bg-[#eaeaea]">
                 <div
-                  className="bg-[#2fa7f7] h-2.5 rounded-full style-background duration-500 w-0"
+                  className="bg-accent h-2.5 rounded-full style-background duration-500 w-0"
                   data-set={`${width}%`}
                 ></div>
               </div>

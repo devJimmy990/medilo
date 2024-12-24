@@ -1,7 +1,10 @@
 import { Routes } from "core/routes";
-import { FC, memo } from "react";
-import { FaAnglesRight } from "react-icons/fa6";
+import { FC, memo, lazy } from "react";
 import { Link } from "react-router-dom";
+import { FaAnglesRight } from "react-icons/fa6";
+
+const SubTitle = lazy(() => import("components/SubTitle"));
+const Description = lazy(() => import("components/Description"));
 
 const MedicalService: FC = () => {
     return (
@@ -21,9 +24,10 @@ const MedicalService: FC = () => {
                         <i className="fas fa-headset fa-lg"></i>
                     </button>
                     <div className="flex flex-col justify-end items-start gap-2 md:gap-4 text-white">
-                        <h3 className="font-bold text-lg md:text-2xl">Meet The Team Support Medical Service</h3>
-                        <p className="text-body text-sm md:text-base">For us, there are no minor aspects, because a quality
-                        </p>
+                        <SubTitle label="Meet The Team Support Medical Service" />
+                        <Description className="text-[#c2cad9]">
+                            For us, there are no minor aspects, because a quality
+                        </Description>
                     </div>
                 </div>
             </div>

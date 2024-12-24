@@ -1,9 +1,12 @@
 import { Routes } from 'core/routes';
-import { FC, memo, useCallback } from 'react';
-import { FaHeadset, FaUserDoctor } from "react-icons/fa6";
-import { IoPlay, IoCheckmarkCircleSharp } from "react-icons/io5";
 import { Link } from 'react-router-dom';
-import { FaAnglesRight } from "react-icons/fa6";
+import { FC, memo, useCallback, lazy } from 'react';
+import { IoPlay, IoCheckmarkCircleSharp } from "react-icons/io5";
+import { FaHeadset, FaUserDoctor, FaAnglesRight } from "react-icons/fa6";
+
+const SubTitle = lazy(() => import("components/SubTitle"));
+const Description = lazy(() => import("components/Description"));
+const BorderedTitle = lazy(() => import("components/BorderedTitle"));
 
 
 const OurAboutUs: FC = () => {
@@ -45,15 +48,16 @@ const OurAboutUs: FC = () => {
             <div className="w-full lg:w-[45%] h-full flex flex-1 flex-col justify-between gap-6 relative p-4">
                 <section className="w-full flex flex-col justify-center items-start gap-4">
                     <aside className="w-full md:w-[90%] md:max-w-[80%] flex flex-col gap-6">
-                        <h3 className="text-xl font-bold pl-4 border-l-4 border-blue-500">OUR ABOUT US</h3>
-                        <h2 className="text-2xl lg:text-3xl font-bold leading-tight">
-                            More Than 26+ Years About Provide Medical.
-                        </h2>
-                        <p className="text-justify text-body">
+
+                        <BorderedTitle borderStart label="Our About US" />
+
+                        <SubTitle label="more than 26+ years about provide medical." />
+
+                        <Description>
                             We are privileged to work with hundreds of future-thinking medical organizations,
                             including many of the world's top hardware, software, and brands. Feel safe and
-                            comfortable in establishing.
-                        </p>
+                            comfortable in establishing."
+                        </Description>
                     </aside>
 
                     <div className="w-full flex flex-wrap sm:flex-nowrap gap-4">
@@ -97,14 +101,14 @@ const OurAboutUs: FC = () => {
                             <span className="font-bold text-accent underline">
                                 READ MORE+
                             </span>
-                        </p> 
+                        </p>
                     </div>
 
 
                     <div>
                         <Link to={Routes.Doctors} onClick={onScrollTop}>
                             <button
-                                className="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue-600 focus:ring-4 focus:ring-blue-300 focus:outline-none"
+                                className="hidden lg:flex items-center gap-2 font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue focus:ring-4 focus:ring-blue-300 focus:outline-none"
                                 aria-label="Learn more about us">
                                 About More
                                 <FaAnglesRight size={12} />

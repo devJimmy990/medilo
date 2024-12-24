@@ -1,16 +1,16 @@
-import { memo, FC } from 'react';
+import { memo, FC, lazy } from 'react';
+
+const SubTitle = lazy(() => import("components/SubTitle"));
+const BorderedTitle = lazy(() => import("components/BorderedTitle"));
 
 const MakeAppointment: FC = () => {
     return (
-        <section className="w-full flex flex-col lg:flex-row justify-end items-center relative bg-gray-50">
-            <div className="w-full lg:w-[60%] py-28" >
+        <section className="w-full flex flex-col lg:flex-row justify-end items-center relative">
+            <div className="w-full lg:w-[60%] py-4 lg:py-28" >
                 <div className="container lg:w-[80%] flex flex-col justify-center gap-8 mx-auto px-5 lg:px-0">
                     <div className="lg:max-w-[80%] flex flex-col gap-2 text-center lg:text-left">
-                        <h4 className="text-lg font-bold text-blue-600 uppercase">Contact Us</h4>
-                        <p className="text-2xl lg:text-3xl font-bold text-gray-800 leading-relaxed">
-                            Make An Appointment <br />
-                            Apply For Treatments
-                        </p>
+                        <BorderedTitle borderStart label="contact us" />
+                        <SubTitle label="Make An Appointment Apply For Treatments" />
                     </div>
 
                     <form className="w-full flex flex-col gap-8">
@@ -46,7 +46,7 @@ const MakeAppointment: FC = () => {
                         <textarea name="comment" id="comment" className="outline-0 rounded-lg px-4 py-1 resize-none focus:ring-2 focus:ring-blue-500"
                             rows={4} placeholder="Write Your Message"></textarea>
                         <div>
-                            <button className="font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue-600"
+                            <button className="font-bold text-white px-5 py-2 bg-accent rounded-3xl hover:bg-blue"
                                 aria-label="Send Request">
                                 Send Request
                             </button>
@@ -62,7 +62,7 @@ const MakeAppointment: FC = () => {
             <div style={{
                 clipPath: 'polygon(0 0, 100% 0, 100% 10%, 70% 15%, 84% 100%, 0 100%, 15% 22%, 0 14%)',
             }}
-                className="w-28 h-52 hidden md:block absolute bottom-0 start-20 lg:start-4 2xl:bottom-4 2xl:start-12 z-10 -rotate-12">
+                className="w-28 h-52 hidden lg:block absolute bottom-0 start-20 lg:start-4 2xl:bottom-4 2xl:start-12 z-10 -rotate-12">
                 <img loading='lazy' src={require("../../assets/images/contact-stethoscope.png")} alt="stethoscope"
                     className="w-full h-full opacity-80 object-cover" />
             </div>

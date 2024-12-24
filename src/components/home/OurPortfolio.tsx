@@ -1,11 +1,14 @@
-import { FC, memo, useState } from 'react';
+import { FC, memo, lazy, useState } from 'react';
 
+const SubTitle = lazy(() => import("components/SubTitle"));
+const Description = lazy(() => import("components/Description"));
+const BorderedTitle = lazy(() => import("components/BorderedTitle"));
 
 type JobModel = { title: string, description: string, }
 const jobs: JobModel[] = [
-    { title: 'Medical Of Working', description: 'We businesss standard chunk of Ipsum used since is Agency & Star tup' },
-    { title: 'Medical Of Dental', description: 'We businesss standard chunk of Ipsum used since is Agency & Star tup' },
-    { title: 'Laboratory Technologist', description: 'We businesss standard chunk of Ipsum used since is Agency & Star tup' },
+    { title: 'Medical Of Working', description: 'We business standard chunk of Ipsum used since is Agency & Star tup' },
+    { title: 'Medical Of Dental', description: 'We business standard chunk of Ipsum used since is Agency & Startup' },
+    { title: 'Laboratory Technologist', description: 'We business standard chunk of Ipsum used since is Agency & Star tup' },
 ]
 const headers: string[] = ['Dental', 'Cardiology', 'Medical']
 
@@ -17,20 +20,18 @@ const OurPortfolio: FC = () => {
         <section className="w-full flex flex-col py-16 gap-10 bg-white">
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6 px-4">
                 <div className="flex flex-col gap-4 text-center md:text-left">
-                    <h4 className="text-lg font-bold text-blue-600 uppercase tracking-wider">Our Portfolio</h4>
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-snug text-gray-800">
-                        All The Great Work That We've Done
-                    </h2>
+                    <BorderedTitle borderStart label="Our Portfolio" />
+                    <SubTitle label="All The Great Work That We've Done" />
                 </div>
 
                 <div className="max-w-md text-center md:text-left">
-                    <p className="text-gray-600">
+                    <Description>
                         We are privileged to work with hundreds of future-thinking medical
                         professionals, including many of the world's top hardware, software,
                         and healthcare brands. Feel safe and comfortable in establishing
                         partnerships with us.
-                    </p>
-                    <ul className="flex justify-center md:justify-center gap-2 mt-4 text-sm text-blue-600 font-medium ">
+                    </Description>
+                    <ul className="flex justify-center md:justify-center gap-2 mt-4 text-sm text-blue font-medium ">
                         {headers.map((header, index) => (
                             <li key={header} onClick={() => { headerIndex !== index && setHeaderIndex(index) }}
                                 className={`px-3 py-1 rounded-md cursor-pointer ${headerIndex === index && 'bg-accent text-white'} hover:bg-accent hover:text-white`}>
@@ -44,7 +45,7 @@ const OurPortfolio: FC = () => {
             <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
                 {
                     jobs.map(({ title, description }, index) => (
-                        <figure className="relative group overflow-hidden rounded-lg shadow-md">
+                        <figure className={`relative max-h-[18rem] group overflow-hidden rounded-lg shadow-md flex-1 ${index === 2 && 'sm:col-span-2'} lg:col-span-1`}>
                             <img className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                                 src={require(`../../assets/images/${jobScope[headerIndex]}${index}.jpg`)} alt="Medical Project" />
                             <figcaption
@@ -52,7 +53,8 @@ const OurPortfolio: FC = () => {
                                 <div className="border-l-2 border-accent ps-4">
                                     <h4 className="text-xl font-bold">{title}</h4>
                                     <p className="max-w-[90%] text-sm text-gray-800">
-                                        {description}                                    </p>
+                                        {description}
+                                    </p>
                                 </div>
                             </figcaption>
                             <div

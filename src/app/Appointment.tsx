@@ -1,5 +1,8 @@
 import { memo, lazy } from 'react';
+
+const SubTitle = lazy(() => import("components/SubTitle"));
 const Banner = lazy(() => import("components/shared/Banner"));
+const BorderedTitle = lazy(() => import("components/BorderedTitle"));
 
 const Appointment = () => {
     return (
@@ -9,8 +12,8 @@ const Appointment = () => {
                 <main
                     className="w-[95%] md:w-[80%] lg:w-[65%] xl:w-[50%] flex flex-col justify-center items-center gap-10 mx-auto rounded-3xl px-2 md:px-8 lg:px-16 py-12 bg-gray">
                     <div className="flex flex-col justify-center items-center gap-4">
-                        <h4 className="text-lg font-bold text-accent">MAKE APPOINTMENTS</h4>
-                        <h2 className="text-3xl font-bold">Booking Now Appointments</h2>
+                        <BorderedTitle borderStart borderEnd label="make appointments" />
+                        <SubTitle label="booking now appointments" />
                     </div>
                     <form action="" className="w-full flex flex-col gap-8">
                         <div className="w-full flex flex-col md:flex-row gap-8">

@@ -1,8 +1,13 @@
-import { memo, FC, ReactNode } from 'react';
+import { Routes } from 'core/routes';
+import { memo, FC, lazy, ReactNode, useCallback } from 'react';
 import {
     FaBriefcaseMedical, FaHospitalUser, FaUserDoctor,
     FaXRay, FaEye, FaHeartPulse, FaHeadSideVirus, FaBedPulse
 } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
+const SubTitle = lazy(() => import("components/SubTitle"));
+const Description = lazy(() => import("components/Description"));
+const BorderedTitle = lazy(() => import("components/BorderedTitle"));
 
 type ServiceModel = {
     title: string,
@@ -54,39 +59,34 @@ const services: ServiceModel[] = [
 ];
 
 const OurBestService: FC = () => {
+    const onScrollTop = useCallback(() => window.scrollTo({ top: 0, behavior: 'smooth', }), [])
     return (
         <section className="container flex flex-col gap-8 mx-auto my-20 px-4 lg:px-0">
-            <div className="h-4 flex items-center before:w-[4px] before:h-full before:rounded-lg before:bg-accent">
-                <h3 className="text-lg sm:text-xl font-bold font-heading text-accent px-3">
-                    OUR BEST SERVICE
-                </h3>
-            </div>
+            <BorderedTitle borderStart label="our best services" />
 
             <div className="flex flex-wrap justify-between items-start gap-4">
-                <h3 className="w-full lg:w-[22%] text-2xl sm:text-3xl font-bold">
-                    High-Quality Services This Doctor
-                </h3>
-                <p className="w-full lg:w-[50%] text-base sm:text-lg text-justify text-body">
+                <SubTitle label="High-Quality Services This Doctor" className="lg:w-[22%]" />
+
+                <Description className="w-full lg:w-[50%] sm:text-lg text-justify text-body">
                     We are privileged to work with hundreds of future-thinking medical
                     organizations, including many of the world's top hardware, software, and brands.
                     Feel safe and comfortable in establishing a relationship with us.
-                </p>
+                </Description>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 {
-                    services.map((item, index) => (
-                        <div key={index}>
-                            <div className="flex flex-col items-center rounded-lg px-6 py-8 bg-white shadow-md">
-                                <div className="w-14 h-14 flex justify-center items-center rounded-full text-white bg-blue">
-                                    {item.icon}
-                                </div>
-                                <h4 className="text-blue text-lg font-bold mt-4">{item.title}</h4>
-                                <p className="text-body text-center">
-                                    {item.description}
-                                </p>
+                    services.map(({ title, description, icon }, index) => (
+                        <Link key={title} to={`${Routes.ServiceDetails}/${title.replace(' ', '-').toLowerCase()}`} onClick={onScrollTop}
+                            className="flex flex-col items-center rounded-lg px-6 py-8 bg-white shadow-md hover:shadow-lg">
+                            <div className="w-14 h-14 flex justify-center items-center rounded-full text-white bg-blue">
+                                {icon}
                             </div>
-                        </div>
+                            <h4 className="text-blue text-lg font-bold mt-4">{title}</h4>
+                            <p className="text-body text-center">
+                                {description}
+                            </p>
+                        </Link>
                     ))
                 }
 
@@ -99,7 +99,7 @@ const OurBestService: FC = () => {
                     <span className="text-accent underline">SEE MORE <i className="fas fa-angles-right fa-xs"></i></span>
                 </p>
             </div>
-        </section>
+        </section >
     );
 }
 

@@ -1,7 +1,10 @@
-import { FC, memo, ReactNode } from 'react';
+import { FC, memo, lazy, ReactNode } from 'react';
 import {
     FaBriefcaseMedical, FaHandHoldingHeart, FaHeartPulse, FaCapsules, FaUserDoctor, FaFlask
 } from "react-icons/fa6";
+
+const SubTitle = lazy(() => import("components/SubTitle"));
+const BorderedTitle = lazy(() => import("components/BorderedTitle"));
 
 type ServicesModel = {
     label: string,
@@ -22,10 +25,8 @@ const WhyChooseUs: FC = () => {
         <section className="md:w-full flex justify-between gap-4  mx-auto bg-gray-100">
             <div className="container mx-auto px-4 lg:w-[65%] flex flex-col justify-center gap-14 lg:ms-auto">
                 <div className="flex flex-col gap-3">
-                    <h4 className="text-lg font-bold text-blue-600 uppercase">Why Choose Us</h4>
-                    <h2 className="text-2xl lg:text-4xl font-bold leading-snug">
-                        Medical Ready To Get This Health Solution
-                    </h2>
+                    <BorderedTitle borderStart label="Why Choose Us" />
+                    <SubTitle label="Medical Ready To Get This Health Solution" />
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-y-16">
@@ -37,7 +38,7 @@ const WhyChooseUs: FC = () => {
                                     {icon}
                                 </div>
                                 <div>
-                                    <h4 className="text-xl font-bold text-blue-600">{label}</h4>
+                                    <h4 className="text-xl font-bold text-blue">{label}</h4>
                                     <p className="text-gray-700">{description}</p>
                                 </div>
                             </div>

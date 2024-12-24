@@ -1,6 +1,5 @@
 import { memo, FC, ReactNode } from "react";
-import { useLocation } from "react-router-dom";
-import doctorsData, { DoctorModel } from "data/doctors";
+import { DoctorModel } from "data/doctors";
 
 import { FaUserMd } from "react-icons/fa";
 import { PiCertificateBold } from "react-icons/pi";
@@ -58,7 +57,7 @@ const DoctorInfo: FC<DoctorModel> = ({ name, specialty, email, img }) => {
           ther isn't naything embarrassing hidden in the middle of text.
         </p>
         <div className="cards flex flex-wrap mt-6">
-          <div className="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-[#2fa7f7] rounded-sm shadow flex gap-2">
+          <div className="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-accent rounded-sm shadow flex gap-2">
             <MdEmail size={38} className="text-accent" />
             <div className="data">
               <h5 className="text-xl font-bold tracking-tight text-gray-900">
@@ -71,7 +70,7 @@ const DoctorInfo: FC<DoctorModel> = ({ name, specialty, email, img }) => {
           </div>
           {details.map(({ label, content, icon }, index) => {
             return (
-              <div key={index} className="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-[#2fa7f7] rounded-sm shadow flex gap-2">
+              <div key={index} className="card w-full sm:w-full md:w-1/2 lg:w-1/2 p-4 bg-white border border-accent rounded-sm shadow flex gap-2">
                 {icon}
                 <div className="data">
                   <h5 className="text-xl font-bold tracking-tight text-gray-900">
