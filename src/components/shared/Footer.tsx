@@ -63,7 +63,7 @@ const Footer: FC = () => {
                             <div className="flex justify-end md:justify-start gap-3">
                                 {
                                     socialLinks.map(({ href, label, icon }) => (
-                                        <a href={href} target="_blank" aria-label={label} rel="noreferrer"
+                                        <a key={label} href={href} target="_blank" aria-label={label} rel="noreferrer"
                                             className="w-8 h-8 flex items-center justify-center bg-[#54b3f4] rounded-full">
                                             {icon}
                                         </a>
@@ -78,13 +78,13 @@ const Footer: FC = () => {
                         <div>
                             <h2 className="text-xl font-bold pb-4">Service</h2>
                             <ul className="space-y-2">
-                                {serviceLinks.map((link) => (<li>{link}</li>))}
+                                {serviceLinks.map((link) => (<li key={link}>{link}</li>))}
                             </ul>
                         </div>
                         <div>
                             <h2 className="text-xl font-bold pb-4">Quick Links</h2>
                             <ul className="space-y-2">
-                                {quickLinks.map((link) => (<li>{link}</li>))}
+                                {quickLinks.map((link) => (<li key={link}>{link}</li>))}
                             </ul>
                         </div>
 
@@ -93,7 +93,7 @@ const Footer: FC = () => {
                             <div className="space-y-4">
                                 {
                                     Posts.map(({ date, title }, index) => (
-                                        <article className="flex items-start gap-3">
+                                        <article key={title} className="flex items-start gap-3">
                                             <img loading="lazy" src={require(`../../assets/images/posts/post-${index}.png`)}
                                                 alt="Post"
                                                 className="w-24 h-20 object-cover rounded-lg" />
@@ -114,7 +114,7 @@ const Footer: FC = () => {
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
                     <p className="text-sm">Copyright &copy; 2024 Medilo, All Rights Reserved</p>
                     <ul className="flex justify-center items-center gap-4 text-sm">
-                        {footerLinks.map((link) => (<li>{link}</li>))}
+                        {footerLinks.map((link) => (<li key={link}>{link}</li>))}
                     </ul>
                 </div>
                 <button type="button" onClick={onScrollTop}

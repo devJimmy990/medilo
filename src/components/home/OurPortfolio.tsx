@@ -45,7 +45,7 @@ const OurPortfolio: FC = () => {
             <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
                 {
                     jobs.map(({ title, description }, index) => (
-                        <figure className={`relative max-h-[18rem] group overflow-hidden rounded-lg shadow-md flex-1 ${index === 2 && 'sm:col-span-2'} lg:col-span-1`}>
+                        <figure key={title} className={`relative max-h-[18rem] group overflow-hidden rounded-lg shadow-md flex-1 ${index === 2 && 'sm:col-span-2'} lg:col-span-1`}>
                             <img className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                                 src={require(`../../assets/images/${jobScope[headerIndex]}${index}.jpg`)} alt="Medical Project" />
                             <figcaption
