@@ -34,7 +34,7 @@ const Header: FC = () => {
                                 {
                                     links.map(({ label, route }) => (
                                         <NavLink key={label} to={route} className={({ isActive }) =>
-                                            isActive ? "text-red-500" : "hover:rounded-xl hover:px-3 hover:py-1 hover:bg-accent"} onClick={() => { openModal && setOpenModal(false) }}>
+                                            isActive ? "text-white bg-accent px-6 py-1 rounded-xl" : "hover:rounded-xl hover:px-3 hover:py-1 hover:bg-accent"} onClick={() => { openModal && setOpenModal(false) }}>
                                             <li className="font-semibold" role="menuitem">
                                                 {label}
                                             </li>
